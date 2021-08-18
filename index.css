@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-size: 16px;
+    user-select: none;
+
+    font-family: 'Roboto Mono', monospace;
+
+    overflow: hidden;
+
+    --col1: #111;
+    --col1-1: #222;
+    --col2: #fff;
+    /* --col1: #89F5D8;
+    --col1-1: #215C4C;
+    --col2: #A8563D; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    font-size: 2em;
+    text-align: center;
+    color: var(--col2);
+
+    background-color: var(--col1);
+    box-shadow: 0 0 2vh var(--col1);
+
+    z-index: 5;
+}
+
+main {
+    flex: 14;
+
+    background-color: var(--col1-1);
+}
+
+#merge-field {
+    position: relative;
+    margin: 0 auto;
+
+    width: 80vw;
+    height: 100%;
+
+    background-color: #8888;
+    box-shadow: 0 0 1.5vh var(--col1-1) inset;
+    border-radius: 5vh;
+}
+.merge-item {
+    display: inline-block;
+    padding: 0.15vh 0.3vw;
+
+    position: absolute;
+
+    font-size: 2.4em;
+    color: #fff;
+
+    background-color: #1111;
+
+    cursor: pointer;
+    transition: color 0.6s cubic-bezier(0,.67,0,.99),
+        transform 0.6s cubic-bezier(0,.67,0,.99),
+        background-color 0.6s cubic-bezier(0,.67,0,.99);
+}
+.merge-item:hover {
+    transform: scale(1.4);
+}
+.merge-item:active {
+    color: var(--col1);
+
+    transform: scale(1.1);
+    background-color: var(--col2);
+
+    transition: color 3s cubic-bezier(0,.67,0,.99),
+        transform 3s cubic-bezier(0,.67,0,.99),
+        background-color 3s cubic-bezier(0,.67,0,.99);
+}
