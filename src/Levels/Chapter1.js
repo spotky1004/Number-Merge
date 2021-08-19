@@ -77,11 +77,11 @@ const Chapter = [
     },
     {
         Level: "1-7",
-        Description: "hehe",
+        Description: "Wait for the next update",
         Goal: [null],
         Items: [
             [
-                ["Operator", { symbol: "H" }], ["Operator", { symbol: "e" }], ["Operator", { symbol: "H" }], ["Operator", { symbol: "e" }]
+                ["Operator", { symbol: "G" }], ["Operator", { symbol: "g" }], ["Operator", { symbol: "G" }], ["Operator", { symbol: "g" }]
             ]
         ]
     }

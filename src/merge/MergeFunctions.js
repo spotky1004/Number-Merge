@@ -73,7 +73,7 @@ const MergeFunctions = {
 
         const toMerge = mergeables.slice(0, 1)[0];
 
-        const [number, operator] = mainItem.symbol.split("");
+        const [number, operator] = [mainItem.symbol.slice(0, -1), mainItem.symbol.slice(-1)];
 
         let symbol;
         switch (operator) {
