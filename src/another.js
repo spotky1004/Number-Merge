@@ -1,7 +1,3 @@
-import EventCache from "./events.js"; EventCache;
-import MergeField from "./MergeField.js";
-import ItemTypes from "./ItemTypes.js";
-
 const tick = {
     lastSpawn: new Date().getTime(),
     lastTick: new Date().getTime(),

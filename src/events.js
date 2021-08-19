@@ -1,4 +1,5 @@
-import MergeField from "./MergeField.js";
+import MergeField from "./merge/MergeField.js";
+import * as Levels from "./Levels/_init.js";
 
 /**
  * @typedef {object} EventCache
@@ -18,6 +19,11 @@ document.addEventListener("mousedown", (e) => {
     EventCache.isMouseDown = true;
 }, false);
 document.addEventListener("mouseup", (e) => {
+    if (!EventCache.target) {
+        EventCache.target = null;
+        EventCache.isMouseDown = false;
+        return;
+    }
     const Item = MergeField.items[EventCache.target.dataset.id];
     MergeField.collisionCheck(Item);
 
@@ -49,4 +55,8 @@ document.addEventListener("mousemove", (e) => {
 window.addEventListener("blur", (e) => {
     EventCache.target = null;
     EventCache.isMouseDown = false;
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "r") MergeField.ReloadStage();
 });

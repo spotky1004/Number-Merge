@@ -1,17 +1,8 @@
-/**
- * @typedef DragableConstructor
- * @property {string} symbol
- * @property {string} id
- * @property {string[]} tags
- * @property { function(MergeItem[]): void } MergeFuntion
- * @property { { x: number, y: number } } position
- */
-
-/** @type {Object.<string, function(): DragableConstructor>} */
+/** @type {Object.<import("../types/ItemType.js").ItemType, function(): import("../types/MergeItemConstructor.js").MergeItemConstructor>} */
 const ItemTypes = {
-    DefaultNumber() {return {
+    Number() {return {
         symbol: Math.floor(Math.random()*10),
-        id: "number",
+        type: "number",
         tags: ["number", "base"],
         MergeFuntion: "Number",
         style: {
@@ -20,7 +11,7 @@ const ItemTypes = {
     }},
     Operator() {return {
         symbol: randomPick("+-×÷"),
-        id: "operator",
+        type: "operator",
         tags: ["operator", "base"],
         MergeFuntion: "Operator",
         style: {
@@ -28,12 +19,21 @@ const ItemTypes = {
         }
     }},
     Symbol() {return {
-        symbol: "𝑥",
-        id: "stymbol",
+        symbol: "x",
+        type: "symbol",
         tags: ["symbol", "base"],
         MergeFuntion: "Base",
         style: {
             textShadow: "0 0 1vh #00f"
+        }
+    }},
+    Term() {return {
+        symbol: "0+",
+        type: "term",
+        tags: ["term", "complex"],
+        MergeFuntion: "Term",
+        style: {
+            textShadow: "0 0 1vh #ff0"
         }
     }}
 };
