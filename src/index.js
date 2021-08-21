@@ -22,7 +22,7 @@ function Tick() {
             }
         }
         Progress.level++;
-        if (Progress.level >= 10) {
+        if (Progress.level > 10) {
             Progress.chapter++;
             Progress.level = 1;
         }
