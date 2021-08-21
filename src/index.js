@@ -5,8 +5,8 @@ window.MergeField = MergeField;
 
 
 const Progress = {
-    chapter: 1,
-    level: 1
+    chapter: 2,
+    level: 8
 };
 MergeField.OpenStage(Levels["Chapter" + Progress.chapter][Progress.level-1]);
 function Tick() {
@@ -22,6 +22,10 @@ function Tick() {
             }
         }
         Progress.level++;
+        if (Progress.level >= 10) {
+            Progress.chapter++;
+            Progress.level = 1;
+        }
         MergeField.OpenStage(Levels["Chapter" + Progress.chapter][Progress.level-1]);
     }
 

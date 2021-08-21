@@ -1,4 +1,4 @@
-/** @type {Object.<import("../types/ItemType.js").ItemType, function(): import("../types/MergeItemConstructor.js").MergeItemConstructor>} */
+/** @type {Object.<string, function(): import("../types/MergeItemConstructor.js").MergeItemConstructor>} */
 const ItemTypes = {
     Number() {return {
         symbol: Math.floor(Math.random()*10),
@@ -10,7 +10,7 @@ const ItemTypes = {
         }
     }},
     Operator() {return {
-        symbol: randomPick("+-×÷"),
+        symbol: randomPick("+-×÷!"),
         type: "operator",
         tags: ["operator", "base"],
         MergeFuntion: "Operator",
@@ -34,6 +34,15 @@ const ItemTypes = {
         MergeFuntion: "Term",
         style: {
             textShadow: "0 0 1vh #ff0"
+        }
+    }},
+    Text() {return {
+        symbol: "A",
+        type: "text",
+        tags: ["text"],
+        MergeFuntion: "Text",
+        style: {
+            color: "#000"
         }
     }}
 };

@@ -14,6 +14,7 @@
     --col1: #111;
     --col1-1: #222;
     --col2: #fff;
+    --col3: #a9bbf7;
     /* --col1: #89F5D8;
     --col1-1: #215C4C;
     --col2: #A8563D; */
@@ -35,15 +36,33 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    font-size: 2em;
-    text-align: center;
-    color: var(--col2);
 
     background-color: var(--col1);
     box-shadow: 0 0 2vh var(--col1);
 
     z-index: 5;
+}
+header > span {
+    text-align: center;
+}
+header > span > span {
+    font-size: 2em;
+    text-align: center;
+    color: var(--col2);
+
+    text-shadow: -3px -3px 12px rgb(0, 255, 0),
+        3px -3px 12px rgb(255, 0, 0),
+        -3px 3px 12px rgb(0, 0, 255);
+}
+header > span > span:not(:first-child)::before {
+    color: #fff;
+    content: "| ";
+}
+#level-symbol::before {
+    content: "[ ";
+}
+#level-symbol::after {
+    content: " ]";
 }
 
 main {

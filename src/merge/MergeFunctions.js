@@ -38,14 +38,26 @@ const MergeFunctions = {
                     case "÷":
                         symbol = 1;
                         break;
+                    case "!":
+                        if (mainItem.symbol >= 200) {
+                            symbol = "Infinity";
+                            break;
+                        }
+                        symbol = 1;
+                        for (let i = 1; i <= mainItem.symbol; i++) {
+                            symbol *= i;
+                        }
+                        break;
                 }
                 break;
         }
-        MergeField.addItem({
+        symbol = Math.min(9999, +symbol);
+            MergeField.addItem({
             ...ItemTypes.Number(),
             position: mainItem.position,
             symbol
         });
+
         
         removeAll([mainItem, toMerge]);
     },
@@ -89,7 +101,19 @@ const MergeFunctions = {
             case "÷":
                 symbol = Math.floor(number / toMerge.symbol);
                 break;
+            case "!":
+                if (Math.max(number - toMerge.symbol, 0) >= 200) {
+                    symbol = "Too Big!";
+                    break;
+                }
+                symbol = 1;
+                for (let i = +toMerge.symbol + 1; i <= number; i++) {
+                    symbol *= i;
+                }
+                break;
         }
+
+        symbol = Math.min(9999, +symbol);
 
         MergeField.addItem({
             ...ItemTypes.Number(),
@@ -97,6 +121,21 @@ const MergeFunctions = {
             symbol
         });
         
+        removeAll([mainItem, toMerge]);
+    },
+    Text(mainItem, mergeItems) {
+        const mergeables = mergeItems.filter(e => e.hasTag("text"));
+
+        if (mergeables.length === 0) return;
+
+        const toMerge = mergeables.slice(0, 1)[0];
+
+        MergeField.addItem({
+            ...ItemTypes.Text(),
+            position: mainItem.position,
+            symbol: toMerge.symbol + mainItem.symbol
+        });
+
         removeAll([mainItem, toMerge]);
     }
 };
