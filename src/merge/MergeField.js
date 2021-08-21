@@ -107,7 +107,7 @@ class MergeField {
     set title(options) {
         for (const key in options) {
             this._title[key].innerHTML = options[key] ?? "";
-            this._title[key].style.display = options[key] ? "span" : "none";
+            this._title[key].style.display = options[key] ? "inline" : "none";
         }
     }
     get title() {
