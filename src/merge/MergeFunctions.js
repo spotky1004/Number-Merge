@@ -81,7 +81,10 @@ const MergeFunctions = {
     Term(mainItem, mergeItems) {
         const mergeables = mergeItems.filter(e => e.hasTag("number"));
 
-        if (mergeables.length === 0) return;
+        if (mergeables.length === 0) {
+            if (mergeItems.length >= 1) this.Text(mainItem, mergeItems);
+            return;
+        };
 
         const toMerge = mergeables.slice(0, 1)[0];
 
@@ -124,7 +127,7 @@ const MergeFunctions = {
         removeAll([mainItem, toMerge]);
     },
     Text(mainItem, mergeItems) {
-        const mergeables = mergeItems.filter(e => e.hasTag("text"));
+        const mergeables = mergeItems.filter(e => e.hasTag(["text", "number"]));
 
         if (mergeables.length === 0) return;
 
