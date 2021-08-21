@@ -110,7 +110,7 @@ const MergeFunctions = {
                     break;
                 }
                 symbol = 1;
-                for (let i = +toMerge.symbol + 1; i <= number; i++) {
+                for (let i = number-toMerge.symbol+1; i <= number; i++) {
                     symbol *= i;
                 }
                 break;
