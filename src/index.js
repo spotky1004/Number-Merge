@@ -5,7 +5,7 @@ window.MergeField = MergeField;
 
 
 const Progress = {
-    chapter: 2,
+    chapter: 1,
     level: 1
 };
 MergeField.OpenStage(Levels["Chapter" + Progress.chapter][Progress.level-1]);

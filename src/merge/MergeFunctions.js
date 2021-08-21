@@ -7,6 +7,8 @@ function removeAll(items) {
     for (var i = 0; i < items.length; i++) MergeField.removeItem(items[i].id);
 }
 
+let NumberLimit = 999999;
+
 /** Main Functions */
 /** @type {Object.<string, function(MergeItem, MergeItem[]): void>} */
 const MergeFunctions = {
@@ -51,7 +53,7 @@ const MergeFunctions = {
                 }
                 break;
         }
-        symbol = Math.min(9999, +symbol);
+        symbol = Math.min(NumberLimit, +symbol);
             MergeField.addItem({
             ...ItemTypes.Number(),
             position: mainItem.position,
@@ -116,7 +118,7 @@ const MergeFunctions = {
                 break;
         }
 
-        symbol = Math.min(9999, +symbol);
+        symbol = Math.min(NumberLimit, +symbol);
 
         MergeField.addItem({
             ...ItemTypes.Number(),
