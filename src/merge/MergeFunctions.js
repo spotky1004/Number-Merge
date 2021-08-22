@@ -119,7 +119,7 @@ const MergeFunctions = {
         
         removeAll([mainItem, toMerge]);
     },
-    Text(mainItem, mergeItems) {
+    text(mainItem, mergeItems) {
         const mergeables = mergeItems.filter((e) => e.hasTag(["text", "number"]));
 
         if (mergeables.length === 0) return;
