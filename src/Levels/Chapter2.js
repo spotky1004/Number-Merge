@@ -124,9 +124,9 @@ const Chapter = [
     },
     {
         Symbol: "2-8",
-        Title: "What is (-n)!m in this game?",
-        Description: "Make 505",
-        Goal: ["505"], 
+        Title: "What is negative factorial in this game?",
+        Description: "Find the definition by your own and make 2",
+        Goal: ["2"],
         Items: [ 
             [
                 ["number", { symbol: -2 }],
@@ -139,6 +139,51 @@ const Chapter = [
                 ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
+            ],
+        ],
+    },
+    {
+        Symbol: "2-9",
+        Title: "Are you ready for FINAL STAGE of chapter 2?",
+        Description: "Make ",
+        Goal: [""],
+        Items: [ 
+            [
+                ["number", { symbol: -2 }],
+                ["number", { symbol: -3 }],
+                ["number", { symbol: 4 }],
+                ["number", { symbol: 5 }],
+            ],
+            [
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "×" }],
+                ["operator", { symbol: "÷" }],
+            ],
+        ],
+    },
+    {
+        Symbol: "2-10",
+        Title: "Final stage of chapter 2",
+        Description: "Make 2036",
+        Goal: ["2036"],
+        Items: [
+            [
+                ["number", { symbol: -44 }],
+                ["number", { symbol: 47 }],
+            ],[
+                ["number", { symbol: 5 }],
+                ["number", { symbol: 3 }],
+                ["number", { symbol: 1 }],
+            ],
+            [
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "+" }],
+                ["operator", { symbol: "×" }],
+            ],[
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "-" }],
+                ["operator", { symbol: "÷" }],
             ],
         ],
     },

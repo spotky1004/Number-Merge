@@ -34,36 +34,65 @@ header {
     flex: 1;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+    color: var(--col2);
 
     background-color: var(--col1);
     box-shadow: 0 0 2vh var(--col1);
 
     z-index: 5;
 }
-header > span {                                                                        
-    text-align: center;
-}
-header > span > span {
-    font-size: 2em;
-    text-align: center;
-    color: var(--col2);
+#stage-symbol {
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    text-shadow: -3px -3px 12px rgb(0, 255, 0),
-        3px -3px 12px rgb(255, 0, 0),
-        -3px 3px 12px rgb(0, 0, 255);
+    font-size: 2.2em;
+    text-align: center;
 }
-header > span > span:not(:first-child)::before {
-    color: #fff;
-    content: "| ";
+#stage-info {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
 }
-#level-symbol::before {
-    content: "[ ";
+#stage-info > div {
+    position: relative;
+
+    flex: 1;
+
+    padding-left: 2%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 1.5em;
+    text-align: left;
 }
-#level-symbol::after {
-    content: " ]";
+#stage-info > div::before {
+    top: 0;
+    left: 50%;
+    position: absolute;
+
+    font-size: 0.3em;
+
+    opacity: 0.4;
 }
+#stage-title::before {
+    content: "Title";
+}
+#stage-description::before {
+    content: "Goal";
+}
+#stage-title {
+    border-radius: 0 0 0 2vh;
+
+    background-color: var(--col1-1);
+}
+
 
 main {
     flex: 14;

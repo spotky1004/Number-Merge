@@ -11,9 +11,9 @@ class MergeField {
         this.items = {};
 
         this._title = {
-            Symbol: document.getElementById("level-symbol"),
-            Title: document.getElementById("level-title"),
-            Description: document.getElementById("level-description")
+            Symbol: document.getElementById("stage-symbol"),
+            Title: document.getElementById("stage-title"),
+            Description: document.getElementById("stage-description")
         };
         /** @type {import("../types/Stage.js").Stage} */
         this.loadedLevel = null;
@@ -111,7 +111,7 @@ class MergeField {
     set title(options) {
         for (const key in options) {
             this._title[key].innerHTML = options[key] ?? "";
-            this._title[key].style.display = options[key] ? "inline" : "none";
+            this._title[key].style.display = options[key] ? "" : "none";
         }
     }
     get title() {
