@@ -1,10 +1,10 @@
 /**
- * @typedef {object} ItemOption
+ * @typedef {object} DropdownOption
  * @property {string} Title
  * @property {function(SaveData): void} func
- * @property {ItemOption[]} Items
+ * @property {DropdownOption[]} Items
  */
 
-/** @type {ItemOption} */
+/** @type {DropdownOption} */
 const sdfsasdasfasd;
 export default sdfsasdasfasd;

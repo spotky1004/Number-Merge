@@ -12,6 +12,7 @@ window.OpenStage = (chapter, stage) => {
 }
 
 const saveData = saveload.load();
+window.saveData = saveData;
 MergeField.openStage(Levels["Chapter" + saveData.Playing.Chapter][saveData.Playing.Stage-1]);
 function Tick() {
     // Check The stage is Completed & If stage is completed, increment stage
@@ -29,9 +30,14 @@ function Tick() {
         if (saveData.Playing.Stage > 10) {
             saveData.Playing.Chapter++;
             saveData.Playing.Stage = 1;
+            if (saveData.Playing.Chapter === saveData.Progress.Chapter) {
+                saveData.Progress.Stage = 1;
+            }
         }
-        saveData.Playing.Chapter = Math.max(saveData.Playing.Chapter, saveData.Progress.Chapter);
-        saveData.Playing.Stage = Math.max(saveData.Playing.Stage, saveData.Progress.Stage);
+        saveData.Progress.Chapter = Math.max(saveData.Playing.Chapter, saveData.Progress.Chapter);
+        if (saveData.Playing.Chapter === saveData.Progress.Chapter) {
+            saveData.Progress.Stage = Math.max(saveData.Playing.Stage, saveData.Progress.Stage);
+        }
         MergeField.openStage(Levels["Chapter" + saveData.Playing.Chapter][saveData.Playing.Stage-1]);
         saveload.save(saveData);
     }

@@ -154,9 +154,15 @@ main {
     border: var(--col2) solid 2px;
     background-color: var(--col1-1);
 }
-.dropdown > div {
+.dropdown > .title {
+    color: var(--col2);
+}
+.dropdown > .item-container {
     
 }
-.dropdown > div:hover {
+.dropdown > .item-container > div {
+    background-color: #fff4;
+}
+.dropdown > .item-container > div:hover {
     background-color: #fff4;
 }

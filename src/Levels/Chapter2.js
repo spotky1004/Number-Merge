@@ -145,19 +145,18 @@ const Chapter = [
     {
         Symbol: "2-9",
         Title: "Are you ready for FINAL STAGE of chapter 2?",
-        Description: "Make ",
-        Goal: [""],
+        Description: "Make -2021",
+        Goal: ["-2021"],
         Items: [ 
             [
-                ["number", { symbol: -2 }],
+                ["number", { symbol: 47 }],
+                ["number", { symbol: -44 }],
+                ["number", { symbol: -5 }],
                 ["number", { symbol: -3 }],
-                ["number", { symbol: 4 }],
-                ["number", { symbol: 5 }],
             ],
             [
                 ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
-                ["operator", { symbol: "×" }],
                 ["operator", { symbol: "÷" }],
             ],
         ],
@@ -165,29 +164,36 @@ const Chapter = [
     {
         Symbol: "2-10",
         Title: "Final stage of chapter 2",
-        Description: "Make 2036",
-        Goal: ["2036"],
-        Items: [
+        Description: "Make 1213056000 (Hint: 10~18, 102...101)",
+        Goal: ["1213056000"], // 힌트 보면 알거같은?? // 이거 힌트 없으면 절대 못품 ㅋㅋ
+        Items: [ // ㄷ?
             [
-                ["number", { symbol: -44 }],
-                ["number", { symbol: 47 }],
+                ["number", { symbol: -13 }],
+                ["number", { symbol: -12 }],
+                ["number", { symbol: -9 }],
+                ["number", { symbol: -7 }],
+                ["number", { symbol: -4 }],
             ],[
-                ["number", { symbol: 5 }],
                 ["number", { symbol: 3 }],
-                ["number", { symbol: 1 }],
+                ["number", { symbol: 5 }],
+                ["number", { symbol: 14 }],
+                ["number", { symbol: 16 }],
+                ["number", { symbol: 17 }],
+                ["number", { symbol: 18 }],
             ],
             [
                 ["operator", { symbol: "×" }],
                 ["operator", { symbol: "×" }],
-                ["operator", { symbol: "×" }],
                 ["operator", { symbol: "÷" }],
                 ["operator", { symbol: "÷" }],
                 ["operator", { symbol: "÷" }],
+                ["operator", { symbol: "-" }],
+                ["operator", { symbol: "-" }],
+                ["operator", { symbol: "-" }],
             ],[
                 ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
-                ["operator", { symbol: "!" }],
-                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "!" }], // eeee 팩토리얼이 몇개야
                 ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
             ],

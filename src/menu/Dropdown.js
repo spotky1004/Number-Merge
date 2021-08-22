@@ -1,5 +1,0 @@
-class DropDown {
-    constructor(items) {
-
-    }
-}
