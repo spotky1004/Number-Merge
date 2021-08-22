@@ -11,6 +11,8 @@
 
     overflow: hidden;
 
+    white-space: nowrap;
+
     --col1: #111;
     --col1-1: #222;
     --col2: #fff;
@@ -43,20 +45,23 @@ header {
     z-index: 5;
 }
 #stage-symbol {
-    flex: 1;
+    flex: 2;
     
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    font-size: 2.2em;
+    opacity: 0.3;
+    text-shadow: 0 0 0.3vh #fff;
+    font-size: 7em;
+    font-weight: 1000;
     text-align: center;
 }
 #stage-info {
+    flex: 5;
+
     display: flex;
     flex-direction: column;
-
-    flex: 1;
 }
 #stage-info > div {
     position: relative;
@@ -69,12 +74,11 @@ header {
     flex-direction: column;
     justify-content: center;
 
-    font-size: 1.5em;
     text-align: left;
 }
 #stage-info > div::before {
     top: 0;
-    left: 50%;
+    left: 5%;
     position: absolute;
 
     font-size: 0.3em;
@@ -90,12 +94,16 @@ header {
 #stage-title {
     border-radius: 0 0 0 2vh;
 
+    font-weight: bolder;
     background-color: var(--col1-1);
+}
+#stage-description {
+    background-color: #0000;
 }
 
 
 main {
-    flex: 14;
+    flex: 10;
 
     background-color: var(--col1-1);
 }

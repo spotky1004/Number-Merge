@@ -8,7 +8,7 @@ function removeAll(items) {
     for (var i = 0; i < items.length; i++) MergeField.removeItem(items[i].id);
 }
 
-let NumberLimit = 999999;
+let NumberLimit = Number.MAX_SAFE_INTEGER;
 
 /** Main Functions */
 /** @type {Object.<string, function(MergeItem, MergeItem[]): void>} */
