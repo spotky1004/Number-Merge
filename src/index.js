@@ -1,16 +1,16 @@
 import MergeField from "./merge/MergeField.js";
+import * as saveload from "./saveload.js";
 import * as Levels from "./Levels/_init.js";
 
 window.MergeField = MergeField;
+window.OpenStage = (chapter, stage) => {
+    MergeField.openStage(Levels["Chapter" + chapter][stage-1]);
+}
 
-
-const Progress = {
-    chapter: 1,
-    level: 1
-};
-MergeField.openStage(Levels["Chapter" + Progress.chapter][Progress.level-1]);
+const saveData = saveload.load();
+MergeField.openStage(Levels["Chapter" + saveData.Progress.Chapter][saveData.Progress.Stage-1]);
 function Tick() {
-    // Check Completed
+    // Check The stage is Completed & If stage is completed, increment stage
     check: if (MergeField.loadedLevel !== null) {
         const Items = Object.entries(MergeField.items).map(e => e[1]);
         for (let i = 0; i < MergeField.loadedLevel.Goal.length; i++) {
@@ -21,12 +21,13 @@ function Tick() {
                 break check;
             }
         }
-        Progress.level++;
-        if (Progress.level > 10) {
-            Progress.chapter++;
-            Progress.level = 1;
+        saveData.Progress.Stage++;
+        if (saveData.Progress.Stage > 10) {
+            saveData.Progress.Chapter++;
+            saveData.Progress.Stage = 1;
         }
-        MergeField.openStage(Levels["Chapter" + Progress.chapter][Progress.level-1]);
+        MergeField.openStage(Levels["Chapter" + saveData.Progress.Chapter][saveData.Progress.Stage-1]);
+        saveload.save(saveData);
     }
 
     // loop

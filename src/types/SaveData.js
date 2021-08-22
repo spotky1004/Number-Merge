@@ -4,5 +4,10 @@
  */
 
 /** @type {SaveData} */
-const safddafa;
+const safddafa = {
+    Progress: {
+        Chapter: 1,
+        Stage: 1
+    }
+};
 export default safddafa;
