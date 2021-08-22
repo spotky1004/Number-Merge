@@ -2,13 +2,17 @@ import MergeField from "./merge/MergeField.js";
 import * as saveload from "./saveload.js";
 import * as Levels from "./Levels/_init.js";
 
+// For Debuging Purpose
 window.MergeField = MergeField;
 window.OpenStage = (chapter, stage) => {
+    saveData.Playing.Chapter = chapter;
+    saveData.Playing.Stage = stage;
+    saveload.save(saveData);
     MergeField.openStage(Levels["Chapter" + chapter][stage-1]);
 }
 
 const saveData = saveload.load();
-MergeField.openStage(Levels["Chapter" + saveData.Progress.Chapter][saveData.Progress.Stage-1]);
+MergeField.openStage(Levels["Chapter" + saveData.Playing.Chapter][saveData.Playing.Stage-1]);
 function Tick() {
     // Check The stage is Completed & If stage is completed, increment stage
     check: if (MergeField.loadedLevel !== null) {
@@ -21,12 +25,14 @@ function Tick() {
                 break check;
             }
         }
-        saveData.Progress.Stage++;
-        if (saveData.Progress.Stage > 10) {
-            saveData.Progress.Chapter++;
-            saveData.Progress.Stage = 1;
+        saveData.Playing.Stage++;
+        if (saveData.Playing.Stage > 10) {
+            saveData.Playing.Chapter++;
+            saveData.Playing.Stage = 1;
         }
-        MergeField.openStage(Levels["Chapter" + saveData.Progress.Chapter][saveData.Progress.Stage-1]);
+        saveData.Playing.Chapter = Math.max(saveData.Playing.Chapter, saveData.Progress.Chapter);
+        saveData.Playing.Stage = Math.max(saveData.Playing.Stage, saveData.Progress.Stage);
+        MergeField.openStage(Levels["Chapter" + saveData.Playing.Chapter][saveData.Playing.Stage-1]);
         saveload.save(saveData);
     }
 
@@ -34,3 +40,5 @@ function Tick() {
     requestAnimationFrame(Tick);
 }
 requestAnimationFrame(Tick); // start loop
+
+setInterval(function() {saveload.save(saveData);},5000); // Save every 5 second

@@ -124,6 +124,26 @@ const Chapter = [
     },
     {
         Symbol: "2-8",
+        Title: "What is (-n)!m in this game?",
+        Description: "Make 505",
+        Goal: ["505"], 
+        Items: [ 
+            [
+                ["number", { symbol: -2 }],
+                ["number", { symbol: -3 }],
+                ["number", { symbol: 4 }],
+                ["number", { symbol: 5 }],
+            ],
+            [
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "!" }],
+            ],
+        ],
+    },
+    {
+        Symbol: "2-99",
         Title: "Wait for the next update",
         Description: "GG",
         Goal: [ null ],

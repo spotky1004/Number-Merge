@@ -43,8 +43,13 @@ document.addEventListener("mousemove", (e) => {
         EventCache.target.classList.contains("merge-item")
     ) {
         const Item = MergeField.items[EventCache.target.dataset.id];
+        if (!Item) {
+            EventCache.target = null;
+            EventCache.isMouseDown = false;
+            return;
+        }
         const cur = Item.position;
-
+        
         Item.position = {
             x: cur.x + dP.x,
             y: cur.y + dP.y

@@ -1,10 +1,8 @@
-/**
- * @typedef {object} SaveData
- * @property { { chapter: Number, level: Number } } Progress
- */
-
-/** @type {SaveData} */
 const safddafa = {
+    Playing: {
+        Chapter: 1,
+        Stage: 1
+    },
     Progress: {
         Chapter: 1,
         Stage: 1
