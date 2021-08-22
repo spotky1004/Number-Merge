@@ -7,10 +7,10 @@ const Chapter = [
         Goal: ["10"],
         Items: [
             [
-                ["Number", { symbol: 1 }], ["Number", { symbol: 2 }]
+                ["number", { symbol: 1 }], ["number", { symbol: 2 }]
             ],
             [
-                ["Number", { symbol: 3 }], ["Number", { symbol: 4 }]
+                ["number", { symbol: 3 }], ["number", { symbol: 4 }]
             ]
         ]
     },
@@ -21,10 +21,10 @@ const Chapter = [
         Goal: ["5", "5"],
         Items: [
             [
-                ["Number", { symbol: 1 }], ["Number", { symbol: 2 }]
+                ["number", { symbol: 1 }], ["number", { symbol: 2 }]
             ],
             [
-                ["Number", { symbol: 3 }], ["Number", { symbol: 4 }]
+                ["number", { symbol: 3 }], ["number", { symbol: 4 }]
             ]
         ]
     },
@@ -35,10 +35,10 @@ const Chapter = [
         Goal: ["4", "7"],
         Items: [
             [
-                ["Number", { symbol: 8 }], ["Number", { symbol: 3 }]
+                ["number", { symbol: 8 }], ["number", { symbol: 3 }]
             ],
             [
-                ["Operator", { symbol: "+" }], ["Operator", { symbol: "-" }]
+                ["operator", { symbol: "+" }], ["operator", { symbol: "-" }]
             ]
         ]
     },
@@ -49,7 +49,7 @@ const Chapter = [
         Goal: ["3"],
         Items: [
             [
-                ["Number", { symbol: 2 }], ["Operator", { symbol: "-" }], ["Number", { symbol: 5 }]
+                ["number", { symbol: 2 }], ["operator", { symbol: "-" }], ["number", { symbol: 5 }]
             ]
         ]
     },
@@ -60,10 +60,10 @@ const Chapter = [
         Goal: ["15"],
         Items: [
             [
-                ["Number", { symbol: 5 }], ["Number", { symbol: 2 }]
+                ["number", { symbol: 5 }], ["number", { symbol: 2 }]
             ],
             [
-                ["Operator", { symbol: "×" }], ["Operator", { symbol: "+" }]
+                ["operator", { symbol: "×" }], ["operator", { symbol: "+" }]
             ]
         ]
     },
@@ -74,10 +74,10 @@ const Chapter = [
         Goal: ["100"],
         Items: [
             [
-                ["Number", { symbol: 5 }], ["Number", { symbol: 5 }]
+                ["number", { symbol: 5 }], ["number", { symbol: 5 }]
             ],
             [
-                ["Operator", { symbol: "×" }], ["Operator", { symbol: "×" }], ["Operator", { symbol: "-" }]
+                ["operator", { symbol: "×" }], ["operator", { symbol: "×" }], ["operator", { symbol: "-" }]
             ]
         ]
     },
@@ -88,10 +88,10 @@ const Chapter = [
         Goal: ["6"],
         Items: [
             [
-                ["Number", { symbol: 12 }], ["Number", { symbol: 36 }], ["Number", { symbol: 3 }]
+                ["number", { symbol: 12 }], ["number", { symbol: 36 }], ["number", { symbol: 3 }]
             ],
             [
-                ["Operator", { symbol: "÷" }]
+                ["operator", { symbol: "÷" }]
             ]
         ]
     },
@@ -102,13 +102,13 @@ const Chapter = [
         Goal: ["9"],
         Items: [
             [
-                ["Number", { symbol: 17 }], ["Number", { symbol: 17 }]
+                ["number", { symbol: 17 }], ["number", { symbol: 17 }]
             ],
             [
-                ["Number", { symbol: 3 }], ["Number", { symbol: 4 }],
+                ["number", { symbol: 3 }], ["number", { symbol: 4 }],
             ],
             [
-                ["Operator", { symbol: "÷" }], ["Operator", { symbol: "÷" }]
+                ["operator", { symbol: "÷" }], ["operator", { symbol: "÷" }]
             ]
         ]
     },
@@ -119,20 +119,20 @@ const Chapter = [
         Goal: ["256"],
         Items: [
             [
-                ["Number", { symbol: 1 }],
-                ["Number", { symbol: 1 }],
-                ["Number", { symbol: 1 }],
-                ["Number", { symbol: 1 }],
-                ["Number", { symbol: 1 }],
-                ["Number", { symbol: 1 }],
-                ["Number", { symbol: 1 }],
-                ["Number", { symbol: 1 }],
+                ["number", { symbol: 1 }],
+                ["number", { symbol: 1 }],
+                ["number", { symbol: 1 }],
+                ["number", { symbol: 1 }],
+                ["number", { symbol: 1 }],
+                ["number", { symbol: 1 }],
+                ["number", { symbol: 1 }],
+                ["number", { symbol: 1 }],
             ],
             [
-                ["Operator", { symbol: "+" }], ["Operator", { symbol: "-" }], ["Operator", { symbol: "×" }], ["Operator", { symbol: "÷" }]
+                ["operator", { symbol: "+" }], ["operator", { symbol: "-" }], ["operator", { symbol: "×" }], ["operator", { symbol: "÷" }]
             ],
             [
-                ["Operator", { symbol: "+" }], ["Operator", { symbol: "-" }], ["Operator", { symbol: "×" }], ["Operator", { symbol: "÷" }]
+                ["operator", { symbol: "+" }], ["operator", { symbol: "-" }], ["operator", { symbol: "×" }], ["operator", { symbol: "÷" }]
             ]
         ]
     },
@@ -143,16 +143,16 @@ const Chapter = [
         Goal: ["9", "9", "11", "11"],
         Items: [
             [
-                ["Term", { symbol: "140÷" }],
-                ["Term", { symbol: "145÷" }],
-                ["Term", { symbol: "150÷" }],
-                ["Term", { symbol: "160÷" }],
+                ["term", { symbol: "140÷" }],
+                ["term", { symbol: "145÷" }],
+                ["term", { symbol: "150÷" }],
+                ["term", { symbol: "160÷" }],
             ],
             [
-                ["Number", { symbol: 13 }],
-                ["Number", { symbol: 14 }],
-                ["Number", { symbol: 15 }],
-                ["Number", { symbol: 16 }],
+                ["number", { symbol: 13 }],
+                ["number", { symbol: 14 }],
+                ["number", { symbol: 15 }],
+                ["number", { symbol: 16 }],
             ],
         ]
     }

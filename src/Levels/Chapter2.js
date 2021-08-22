@@ -7,10 +7,10 @@ const Chapter = [
         Goal: ["120"],
         Items: [
             [
-                ["Number", { symbol: 5 }]
+                ["number", { symbol: 5 }]
             ],
             [
-                ["Operator", { symbol: "!" }]
+                ["operator", { symbol: "!" }]
             ]
         ],
     },
@@ -21,11 +21,11 @@ const Chapter = [
         Goal: ["12"],
         Items: [
             [
-                ["Number", { symbol: 2 }],
-                ["Number", { symbol: 4 }],
+                ["number", { symbol: 2 }],
+                ["number", { symbol: 4 }],
             ],
             [
-                ["Operator", { symbol: "!" }]
+                ["operator", { symbol: "!" }]
             ],
         ],
     },
@@ -36,12 +36,12 @@ const Chapter = [
         Goal: ["144"],
         Items: [
             [
-                ["Number", { symbol: 2 }],
-                ["Number", { symbol: 4 }],
+                ["number", { symbol: 2 }],
+                ["number", { symbol: 4 }],
             ],
             [
-                ["Operator", { symbol: "!" }],
-                ["Operator", { symbol: "×" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "×" }],
             ],
         ],
     },
@@ -52,15 +52,15 @@ const Chapter = [
         Goal: ["18"],
         Items: [
             [
-                ["Number", { symbol: 7 }],
-                ["Number", { symbol: 7 }],
-                ["Number", { symbol: 3 }],
-                ["Number", { symbol: 2 }],
+                ["number", { symbol: 7 }],
+                ["number", { symbol: 7 }],
+                ["number", { symbol: 3 }],
+                ["number", { symbol: 2 }],
             ],
             [
-                ["Operator", { symbol: "!" }],
-                ["Operator", { symbol: "×" }],
-                ["Operator", { symbol: "÷" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "×" }],
+                ["operator", { symbol: "÷" }],
             ],
         ],
     },
@@ -71,19 +71,19 @@ const Chapter = [
         Goal: ["2303"],
         Items: [
             [
-                ["Number", { symbol: 7 }],
-                ["Number", { symbol: 4 }],
-                ["Number", { symbol: 3 }],
+                ["number", { symbol: 7 }],
+                ["number", { symbol: 4 }],
+                ["number", { symbol: 3 }],
             ],
             [
-                ["Number", { symbol: 2 }],
-                ["Operator", { symbol: "×" }],
-                ["Operator", { symbol: "!" }],
+                ["number", { symbol: 2 }],
+                ["operator", { symbol: "×" }],
+                ["operator", { symbol: "!" }],
             ],
             [
-                ["Operator", { symbol: "×" }],
-                ["Operator", { symbol: "!" }],
-                ["Operator", { symbol: "÷" }],
+                ["operator", { symbol: "×" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "÷" }],
             ],
         ],
     },
@@ -94,12 +94,12 @@ const Chapter = [
         Goal: ["25"],
         Items: [
             [
-                ["Number", { symbol: 5 }]
+                ["number", { symbol: 5 }]
             ],
             [
-                ["Operator", { symbol: "!" }],
-                ["Operator", { symbol: "+" }],
-                ["Operator", { symbol: "-" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "+" }],
+                ["operator", { symbol: "-" }],
             ],
         ],
     },
@@ -110,15 +110,15 @@ const Chapter = [
         Goal: ["505"],
         Items: [
             [
-                ["Number", { symbol: 2 }],
-                ["Number", { symbol: 2 }],
+                ["number", { symbol: 2 }],
+                ["number", { symbol: 2 }],
             ],
             [
-                ["Operator", { symbol: "-" }],
-                ["Operator", { symbol: "!" }],
-                ["Operator", { symbol: "×" }],
-                ["Operator", { symbol: "!" }],
-                ["Operator", { symbol: "-" }],
+                ["operator", { symbol: "-" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "×" }],
+                ["operator", { symbol: "!" }],
+                ["operator", { symbol: "-" }],
             ],
         ],
     },
@@ -128,13 +128,13 @@ const Chapter = [
         Description: "GG",
         Goal: [ null ],
         Items: Array.from({ length: 26 }, (_, i) => (i+10).toString(36).toUpperCase())
-            .map(e => ["Text", {symbol: e}])
+            .map((e) => ["text", {symbol: e}])
             .map((_, i, a) => a.slice(i*6, (i+1)*6))
-            .filter(e => e.length).concat(
+            .filter((e) => e.length).concat(
                 Array.from({ length: 10 }, (_, i) => i)
-                .map(e => ["Number", {symbol: e}])
+                .map((e) => ["number", {symbol: e}])
                 .map((_, i, a) => a.slice(i*5, (i+1)*5))
-                .filter(e => e.length)
+                .filter((e) => e.length)
             )
     }
 ];

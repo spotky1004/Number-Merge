@@ -58,5 +58,7 @@ window.addEventListener("blur", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key === "r") MergeField.ReloadStage();
+    if (e.key === "r") {
+        MergeField.reloadStage();
+    }
 });

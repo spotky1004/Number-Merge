@@ -1,3 +1,14 @@
+import  MergeField from "./merge/MergeField.js";
+
+// Util
+/**
+ * @param {string|string[]} value 
+ */
+function randomPick(value) {
+    if (typeof value === "string") value = value.split("");
+    return value[Math.floor(Math.random() * value.length)];
+} 
+
 const tick = {
     lastSpawn: new Date().getTime(),
     lastTick: new Date().getTime(),
@@ -23,14 +34,3 @@ function Tick() {
     requestAnimationFrame(Tick);
 }
 requestAnimationFrame(Tick); // start loop
-
-
-
-// Util
-/**
- * @param {string|string[]} value 
- */
-function randomPick(value) {
-    if (typeof value === "string") value = value.split("");
-    return value[Math.floor(Math.random() * value.length)];
-} 

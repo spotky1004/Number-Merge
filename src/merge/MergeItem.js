@@ -20,14 +20,16 @@ export default class MergeItem {
         this.symbol = symbol + "";
         this.type = type;
         this.id = id ?? `${this.type}_T${new Date().getTime()}_R${Math.floor(Math.random()*16**6).toString(16)}`;
-        this.tags = tags.map(e => e.toString());
+        this.tags = tags.map((e) => e.toString());
         this.MergeFuntion = MergeFuntion;
 
         const ele = document.createElement("span");
         ele.classList.add("merge-item");
         ele.innerText = this.symbol;
         ele.dataset.id = this.id;
-        for (const s in style) ele.style[s] = style[s];
+        for (const s in style) {
+            ele.style[s] = style[s];
+        }
         this.ele = ele;
 
         this.position = {
@@ -75,8 +77,11 @@ export default class MergeItem {
      * @param {string|string[]} tags 
      */
     hasTag(tags) {
-        if (typeof tags === "string") return this.tags.includes(tags);
-        else return tags.some(tag => this.tags.includes(tag));
+        if (typeof tags === "string") {
+            return this.tags.includes(tags);
+        } else {
+            return tags.some(tag => this.tags.includes(tag));
+        }
     }
 
     export() {
@@ -85,7 +90,7 @@ export default class MergeItem {
             id: this.id,
             tags: this.tags,
             position: this.position,
-            MergeFuntion: MergeFuntion
+            MergeFuntion: this.MergeFuntion
         };
     }
 }

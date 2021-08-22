@@ -54,7 +54,9 @@ class MergeField {
                 FromPos.y < ItemPos.y + ItemSize.height &&
                 FromPos.y + FromSize.height > ItemPos.y &&
                 Item !== from
-            ) collisions.push(Item);
+            ) {
+                collisions.push(Item);
+            }
         }
         collisions.sort((a, b) => Math.sqrt(b.x**2 + b.y**2) - Math.sqrt(a.x**2 + a.y**2));
 
@@ -62,14 +64,16 @@ class MergeField {
     }
 
     /** @param {import("../types/Stage.js").Stage} stage */
-    OpenStage(stage) {
-        for (const id in this.items) this.removeItem(id);
+    openStage(stage) {
+        for (const id in this.items) {
+            this.removeItem(id);
+        }
 
         this.title = {
             Symbol: stage.Symbol,
             Description: stage.Description,
             Title: stage.Title
-        }
+        };
 
         for (let i = 0; i < stage.Items.length; i++) {
             const Line = stage.Items[i];
@@ -92,8 +96,8 @@ class MergeField {
         ItemGap: 0.1,
         LineGap: 0.1
     };
-    ReloadStage() {
-        this.OpenStage(this.loadedLevel);
+    reloadStage() {
+        this.openStage(this.loadedLevel);
     }
 
     get size() {

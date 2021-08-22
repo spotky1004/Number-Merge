@@ -1,50 +1,50 @@
 /** @type {Object.<string, function(): import("../types/MergeItemConstructor.js").MergeItemConstructor>} */
 const ItemTypes = {
-    Number() {return {
+    number() {return {
         symbol: Math.floor(Math.random()*10),
         type: "number",
         tags: ["number", "base"],
-        MergeFuntion: "Number",
+        MergeFuntion: "number",
         style: {
             textShadow: "0 0 1vh #0f0"
         }
-    }},
-    Operator() {return {
+    };},
+    operator() {return {
         symbol: randomPick("+-×÷!"),
         type: "operator",
         tags: ["operator", "base"],
-        MergeFuntion: "Operator",
+        MergeFuntion: "operator",
         style: {
             textShadow: "0 0 1vh #f00"
         }
-    }},
-    Symbol() {return {
+    };},
+    symbol() {return {
         symbol: "x",
         type: "symbol",
         tags: ["symbol", "base"],
-        MergeFuntion: "Base",
+        MergeFuntion: "base",
         style: {
             textShadow: "0 0 1vh #00f"
         }
-    }},
-    Term() {return {
+    };},
+    term() {return {
         symbol: "0+",
         type: "term",
         tags: ["term", "complex"],
-        MergeFuntion: "Term",
+        MergeFuntion: "term",
         style: {
             textShadow: "0 0 1vh #ff0"
         }
-    }},
-    Text() {return {
+    };},
+    text() {return {
         symbol: "A",
         type: "text",
         tags: ["text"],
-        MergeFuntion: "Text",
+        MergeFuntion: "text",
         style: {
             color: "#000"
         }
-    }}
+    };}
 };
 export default ItemTypes;
 

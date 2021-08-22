@@ -42,7 +42,7 @@ header {
 
     z-index: 5;
 }
-header > span {
+header > span {                                                                        
     text-align: center;
 }
 header > span > span {
@@ -110,4 +110,16 @@ main {
     transition: color 3s cubic-bezier(0,.67,0,.99),
         transform 3s cubic-bezier(0,.67,0,.99),
         background-color 3s cubic-bezier(0,.67,0,.99);
+}
+
+.dropdown {
+    position: absolute;
+    border: var(--col2) solid 2px;
+    background-color: var(--col1-1);
+}
+.dropdown > div {
+    
+}
+.dropdown > div:hover {
+    background-color: #fff4;
 }
