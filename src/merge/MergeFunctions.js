@@ -1,6 +1,7 @@
 import MergeField from "./MergeField.js";
 import MergeItem from "./MergeItem.js";
 import ItemTypes from "./ItemTypes.js";
+import * as Operators from "../math.js";
 
 /** Util Functions */
 function removeAll(items) {
@@ -43,14 +44,7 @@ const MergeFunctions = {
                         symbol = 1;
                         break;
                     case "!":
-                        if (mainItem.symbol >= 200) {
-                            symbol = "Infinity";
-                            break;
-                        }
-                        symbol = 1;
-                        for (let i = 1; i <= mainItem.symbol; i++) {
-                            symbol *= i;
-                        }
+                        symbol = Operators.factorial(mainItem.symbol);
                         break;
                 }
                 break;
@@ -111,14 +105,7 @@ const MergeFunctions = {
                 symbol = Math.floor(number / toMerge.symbol);
                 break;
             case "!":
-                if (Math.max(number - toMerge.symbol, 0) >= 200) {
-                    symbol = "Too Big!";
-                    break;
-                }
-                symbol = 1;
-                for (let i = number-toMerge.symbol+1; i <= number; i++) {
-                    symbol *= i;
-                }
+                symbol = Operators.factorial(number, toMerge.symbol);
                 break;
         }
 
