@@ -151,17 +151,37 @@ main {
 
 .dropdown {
     position: absolute;
-    border: var(--col2) solid 2px;
+    padding: 0.7vh;
+    
+    color: var(--col2);
+    
+    box-shadow: 0 0 1vh var(--col1-1);
+    
+    border-radius: 0.2vh;
     background-color: var(--col1-1);
 }
 .dropdown > .title {
+    padding: 0.2vh 0.9vw;
+    margin-bottom: 0.6vh;
+
+    min-width: 10vw;
+
     color: var(--col2);
+    font-size: 1.2em;
+
+    border-radius: 0.3vh;
+    background-color: var(--col1);
+    box-shadow: 0 0 0.4vh var(--col1);
 }
 .dropdown > .item-container {
     
 }
 .dropdown > .item-container > div {
-    background-color: #fff4;
+    padding-left: 0.3vw;
+
+    border-radius: 0.4vh;
+
+    cursor: pointer;
 }
 .dropdown > .item-container > div:hover {
     background-color: #fff4;

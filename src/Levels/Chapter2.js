@@ -165,8 +165,8 @@ const Chapter = [
         Symbol: "2-10",
         Title: "Final stage of chapter 2",
         Description: "Make 1213056000 (Hint: 10~18, 102...101)",
-        Goal: ["1213056000"], // 힌트 보면 알거같은?? // 이거 힌트 없으면 절대 못품 ㅋㅋ
-        Items: [ // ㄷ?
+        Goal: ["1213056000"],
+        Items: [
             [
                 ["number", { symbol: -13 }],
                 ["number", { symbol: -12 }],
@@ -193,7 +193,7 @@ const Chapter = [
             ],[
                 ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
-                ["operator", { symbol: "!" }], // eeee 팩토리얼이 몇개야
+                ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
             ],

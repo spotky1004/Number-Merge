@@ -1,4 +1,6 @@
+import Dropdown from "./menu/data.js";
 import MergeField from "./merge/MergeField.js";
+import saveData from "./saveData.js";
 import * as saveload from "./saveload.js";
 import * as Levels from "./Levels/_init.js";
 
@@ -11,8 +13,6 @@ window.OpenStage = (chapter, stage) => {
     MergeField.openStage(Levels["Chapter" + chapter][stage-1]);
 }
 
-const saveData = saveload.load();
-window.saveData = saveData;
 MergeField.openStage(Levels["Chapter" + saveData.Playing.Chapter][saveData.Playing.Stage-1]);
 function Tick() {
     // Check The stage is Completed & If stage is completed, increment stage
