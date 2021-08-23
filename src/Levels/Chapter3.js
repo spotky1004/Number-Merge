@@ -188,8 +188,6 @@ const Chapter = [
                 ["operator", { symbol: "÷" }],
                 ["operator", { symbol: "÷" }],
                 ["operator", { symbol: "-" }],
-                ["operator", { symbol: "-" }],
-                ["operator", { symbol: "-" }],
             ],[
                 ["operator", { symbol: "!" }],
                 ["operator", { symbol: "!" }],
