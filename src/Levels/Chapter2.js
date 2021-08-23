@@ -30,8 +30,8 @@ const Chapter = [
     {
         Symbol: "2-3",
         Title: "",
-        Description: "Make 75",
-        Goal: ["75"],
+        Description: "Make -75",
+        Goal: ["-75"],
         Items: [
             [
                 ["number", { symbol: -3 }],
