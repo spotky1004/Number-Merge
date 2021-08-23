@@ -73,6 +73,7 @@ document.addEventListener('contextmenu', function(e) {
 window.addEventListener("blur", (e) => {
     EventCache.target = null;
     EventCache.isMouseDown = false;
+    dropdown.close();
 });
 
 document.addEventListener("keydown", (e) => {

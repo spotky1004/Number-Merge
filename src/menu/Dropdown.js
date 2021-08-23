@@ -45,7 +45,6 @@ export default class Dropdown {
                     itemNode.classList.add("menu");
                     itemNode.onclick = (e) => this.Items[i].openAt(e.clientX, e.clientY);
                 } else {
-                    console.log(1);
                     itemNode.onclick = (e) => ItemData.clickable(saveData) && ItemData.func(saveData);
                 }
                 itemNode.innerText = ItemData.Title;
@@ -60,7 +59,6 @@ export default class Dropdown {
         this.ele.style.left = x + "px";
         this.ele.style.top = y + "px";
 
-        console.log(this);
         for (let i = 0; i < this.Items.length; i++) {
             const item = this.Items[i];
             if (typeof item.clickable !== "undefined") {

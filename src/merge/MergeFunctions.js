@@ -49,8 +49,8 @@ const MergeFunctions = {
                 }
                 break;
         }
-        symbol = Math.min(NumberLimit, +symbol);
-            MergeField.addItem({
+        symbol = Math.max(-NumberLimit, Math.min(NumberLimit, +symbol));
+        MergeField.addItem({
             ...ItemTypes.number(),
             position: mainItem.position,
             symbol
@@ -65,7 +65,12 @@ const MergeFunctions = {
     operator(mainItem, mergeItems) {
         const mergeables = mergeItems.filter(e => e.hasTag("number"));
 
-        if (mergeables.length === 0) return;
+        if (mergeables.length === 0) {
+            if (mergeItems.filter(e => !e.hasTag("operator")).length >= 1) {
+                this.text(mainItem, mergeItems);
+            }
+            return;
+        }
 
         const toMerge = mergeables.slice(0, 1)[0];
         MergeField.addItem({
@@ -109,7 +114,7 @@ const MergeFunctions = {
                 break;
         }
 
-        symbol = Math.min(NumberLimit, +symbol);
+        symbol = Math.max(-NumberLimit, Math.min(NumberLimit, +symbol));
 
         MergeField.addItem({
             ...ItemTypes.number(),
@@ -120,7 +125,7 @@ const MergeFunctions = {
         removeAll([mainItem, toMerge]);
     },
     text(mainItem, mergeItems) {
-        const mergeables = mergeItems.filter((e) => e.hasTag(["text", "number"]));
+        const mergeables = mergeItems.filter((e) => e.hasTag(["text", "number", "operator"]));
 
         if (mergeables.length === 0) return;
 
