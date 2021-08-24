@@ -163,7 +163,7 @@ const Chapter = [
     },
     {
         Symbol: "3-10",
-        Title: "Final stage of chapter 2",
+        Title: "Final stage of chapter 3",
         Description: "Make 1213056000 (Hint: 10~18, 102...101)",
         Goal: ["1213056000"],
         Items: [
