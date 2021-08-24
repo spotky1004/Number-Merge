@@ -13,7 +13,25 @@ const contextMenu = new ContextMenu({
             func: () => MergeField.reloadStage()
         },
         {
-            Title: "For now..."
+            Title: "Social Links",
+            Items: [
+                {
+                    Title: "Discord",
+                    func: () => window.open("https://discord.com/invite/wkdVQxT")
+                },
+                {
+                    Title: "Youtube",
+                    func: () => window.open("https://www.youtube.com/channel/UChnISIErP62cfpdu0DWucxw")
+                },
+                {
+                    Title: "Github",
+                    func: () => window.open("https://github.com/spotky1004")
+                },
+                {
+                    Title: "Reddit",
+                    func: () => window.open("https://www.reddit.com/user/spotky1004")
+                }
+            ]
         }
     ]
 });
