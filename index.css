@@ -149,7 +149,7 @@ main {
         background-color 3s cubic-bezier(0,.67,0,.99);
 }
 
-.dropdown {
+.context-menu {
     position: absolute;
     padding: 0.7vh;
     
@@ -160,7 +160,7 @@ main {
     border-radius: 0.2vh;
     background-color: var(--col1-1);
 }
-.dropdown > .title {
+.context-menu > .title {
     padding: 0.2vh 0.9vw;
     margin-bottom: 0.6vh;
 
@@ -173,16 +173,13 @@ main {
     background-color: var(--col1);
     box-shadow: 0 0 0.4vh var(--col1);
 }
-.dropdown > .item-container {
-    
-}
-.dropdown > .item-container > div {
+.context-menu > .item-container > div {
     padding-left: 0.3vw;
 
     border-radius: 0.4vh;
 
     cursor: pointer;
 }
-.dropdown > .item-container > div:hover {
+.context-menu > .item-container > div:hover {
     background-color: #fff4;
 }

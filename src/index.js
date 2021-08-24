@@ -1,17 +1,17 @@
-import Dropdown from "./menu/data.js";
+import contextMenu from "./contextmenu/data.js";
 import MergeField from "./merge/MergeField.js";
 import saveData from "./saveData.js";
 import * as saveload from "./saveload.js";
 import * as Levels from "./Levels/_init.js";
 
 // For Debuging Purpose
-// window.MergeField = MergeField;
-// window.OpenStage = (chapter, stage) => {
-//     saveData.Playing.Chapter = chapter;
-//     saveData.Playing.Stage = stage;
-//     saveload.save(saveData);
-//     MergeField.openStage(Levels["Chapter" + chapter][stage-1]);
-// }
+window.MergeField = MergeField;
+window.OpenStage = (chapter, stage) => {
+    saveData.Playing.Chapter = chapter;
+    saveData.Playing.Stage = stage;
+    saveload.save(saveData);
+    MergeField.openStage(Levels["Chapter" + chapter][stage-1]);
+}
 
 MergeField.openStage(Levels["Chapter" + saveData.Playing.Chapter][saveData.Playing.Stage-1]);
 function Tick() {

@@ -2,9 +2,9 @@ import saveData from "../saveData.js";
 
 const Body = document.getElementsByTagName("body")[0];
 
-export default class Dropdown {
+export default class ContextMenu {
     /**
-     * @param {import("../types/DropdownItem").DropdownOption} DropdownOption
+     * @param {import("../types/ContextMenuOption").ContextMenuOption} DropdownOption
      */
     constructor(DropdownOption) {
         this.Title = DropdownOption.Title;
@@ -13,14 +13,14 @@ export default class Dropdown {
         if (Array.isArray(DropdownOption.Items)) {
             this.Items = [];
             for (let i = 0; i < DropdownOption.Items.length; i++) {
-                this.Items.push(new Dropdown(DropdownOption.Items[i]));
+                this.Items.push(new ContextMenu(DropdownOption.Items[i]));
             }
         }
 
         if (DropdownOption.Items) {
             // Crate element
             this.ele = document.createElement("div");
-            this.ele.classList.add("dropdown");
+            this.ele.classList.add("context-menu");
             this.ele.dataset.id = this.id;
             // Create Title element
             const titleNode = document.createElement("div");
@@ -34,7 +34,7 @@ export default class Dropdown {
             // Create Item elements
             this.ItemNodes = [];
             for (let i = 0; i < DropdownOption.Items.length; i++) {
-                /** @type {import("../types/DropdownItem").DropdownOption} */
+                /** @type {import("../types/ContextMenuOption").DropdownOption} */
                 const ItemData = DropdownOption.Items[i];
                 
                 const itemNode = document.createElement("div");
@@ -45,7 +45,8 @@ export default class Dropdown {
                     itemNode.classList.add("menu");
                     itemNode.onclick = (e) => this.Items[i].openAt(e.clientX, e.clientY);
                 } else {
-                    itemNode.onclick = (e) => ItemData.clickable(saveData) && ItemData.func(saveData);
+                    const isClickable = ItemData.clickable ? ItemData.clickable(saveData) : true;
+                    if (isClickable) itemNode.onclick = (e) => ItemData.func(saveData);
                 }
                 itemNode.innerText = ItemData.Title;
     
@@ -71,6 +72,6 @@ export default class Dropdown {
     }
 
     close() {
-        [...document.getElementsByClassName("dropdown")].map(e => e.parentElement.removeChild(e));
+        [...document.getElementsByClassName("context-menu")].map(e => e.parentElement.removeChild(e));
     }
 }

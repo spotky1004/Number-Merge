@@ -60,7 +60,7 @@ class MergeField {
         }
         collisions.sort((a, b) => Math.sqrt(b.x**2 + b.y**2) - Math.sqrt(a.x**2 + a.y**2));
 
-        MergeFunctions[from.MergeFuntion](from, collisions);
+        MergeFunctions[from.MergeFuntion].merge(from, collisions);
     }
 
     /** @param {import("../types/Stage.js").Stage} stage */

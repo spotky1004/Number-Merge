@@ -1,5 +1,5 @@
 import MergeField from "./merge/MergeField.js";
-import dropdown from "./menu/data.js"
+import contextMenu from "./contextmenu/data.js"
 import * as Levels from "./Levels/_init.js";
 
 /**
@@ -18,12 +18,12 @@ document.addEventListener("mousedown", (e) => {
     const target = e.target;
     EventCache.target = target;
     EventCache.isMouseDown = true;
-
+    
     if (
-        !e.target.classList.contains("dropdown") &&
-        !e.target.parentElement.classList.contains("dropdown") &&
-        !e.target.parentElement.parentElement.classList.contains("dropdown")
-    ) dropdown.close();
+        !e.target.classList.contains("context-menu") &&
+        !e.target.parentElement.classList.contains("context-menu") &&
+        !e.target.parentElement.parentElement.classList.contains("context-menu")
+    ) contextMenu.close();
 }, false);
 document.addEventListener("mouseup", (e) => {
     if (!EventCache.target) {
@@ -66,14 +66,14 @@ document.addEventListener("mousemove", (e) => {
 
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-    dropdown.close();
-    dropdown.openAt(e.clientX, e.clientY);
+    contextMenu.close();
+    contextMenu.openAt(e.clientX, e.clientY);
 }, false);
 
 window.addEventListener("blur", (e) => {
     EventCache.target = null;
     EventCache.isMouseDown = false;
-    dropdown.close();
+    contextMenu.close();
 });
 
 document.addEventListener("keydown", (e) => {

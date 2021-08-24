@@ -1,11 +1,11 @@
 /**
- * @typedef {object} DropdownOption
+ * @typedef {object} ContextMenuOption
  * @property {string} Title
  * @property {function(SaveData): void} func
  * @property {function(SaveData): boolean} clickable
- * @property {DropdownOption[]} Items
+ * @property {ContextMenuOption[]} Items
  */
 
-/** @type {DropdownOption} */
+/** @type {ContextMenuOption} */
 const sdfsasdasfasd;
 export default sdfsasdasfasd;
