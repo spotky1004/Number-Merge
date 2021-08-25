@@ -1,5 +1,6 @@
 import MergeField from "../merge/MergeField.js";
 import saveData from "../saveData.js";
+import { DefaultStageRules } from "../constants.js";
 
 /**
  * @typedef {object} WorldConstructor
@@ -29,6 +30,7 @@ export default class World {
         return {
             ...Stage,
             stageRules: {
+                ...DefaultStageRules,
                 ...this.stageRules,
                 ...Chapter.stageRules,
                 ...Stage.stageRules
