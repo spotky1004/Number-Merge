@@ -6,15 +6,15 @@ import Worlds from "./Worlds/_init.js";
 
 
 // For Debuging Purpose
-window.MergeField = MergeField;
-window.Worlds = Worlds;
-window.OpenStage = (world, chapter, stage) => {
-    saveData.Playing.World = world;
-    saveData.Playing.Chapter = chapter;
-    saveData.Playing.Stage = stage;
-    Worlds[world].openStage(chapter, stage, saveData);
-    saveload.save(saveData);
-}
+// window.MergeField = MergeField;
+// window.Worlds = Worlds;
+// window.OpenStage = (world, chapter, stage) => {
+//     saveData.Playing.World = world;
+//     saveData.Playing.Chapter = chapter;
+//     saveData.Playing.Stage = stage;
+//     Worlds[world].openStage(chapter, stage, saveData);
+//     saveload.save(saveData);
+// }
 
 
 

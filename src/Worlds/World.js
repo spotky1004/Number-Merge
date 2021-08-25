@@ -11,8 +11,6 @@ export default class World {
         this.chapterOrder = world.chapterOrder ?? [];
         this.stageRules = world.stageRules ?? {};
         this.isUnlocked = world.isUnlocked;
-
-        console.log(this);
     }
 
     /**
