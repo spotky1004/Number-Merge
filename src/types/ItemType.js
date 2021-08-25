@@ -3,5 +3,5 @@
  */
 
 /** @type {ItemType} */
-const fsdasasfasdas;
-export default fsdasasfasdas;
+const itemType;
+export default itemType;

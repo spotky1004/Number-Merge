@@ -1,13 +1,14 @@
 import SaveData from "./types/SaveData.js";
+import { LocalStorageKey } from "./constants.js";
 
-export function save(data, key="number_merge_1") {
+export function save(data, key=LocalStorageKey) {
     localStorage.setItem(key, JSON.stringify(data));
 }
 
 /**
  * @returns {SaveData}
  */
-export function load(key="number_merge_1") {
+export function load(key=LocalStorageKey) {
     return mergeObject(JSON.parse(localStorage.getItem(key)), SaveData ?? {});
 }
 

@@ -1,6 +1,6 @@
 import * as World from "../Worlds/_init.js";
 
-const safddafa = {
+const SaveData = {
     Playing: {
         World: "Main",
         Chapter: "Chapter1",
@@ -9,4 +9,4 @@ const safddafa = {
     /** @type {World.<string, string[]>} */
     Completed: {}
 };
-export default safddafa;
+export default SaveData;

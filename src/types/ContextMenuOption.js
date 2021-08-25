@@ -7,5 +7,5 @@
  */
 
 /** @type {ContextMenuOption} */
-const sdfsasdasfasd;
-export default sdfsasdasfasd;
+const contextMenuOption = {};
+export default contextMenuOption;

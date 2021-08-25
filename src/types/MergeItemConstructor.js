@@ -11,5 +11,5 @@ import MergeItem from "../merge/MergeItem.js";
  */
 
 /** @type {MergeItemConstructor} */
-const asdasfasdasf = {};
-export default asdasfasdasf;
+const mergeItem = {};
+export default mergeItem;
