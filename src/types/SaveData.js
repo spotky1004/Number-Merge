@@ -1,11 +1,12 @@
+import * as World from "../Worlds/_init.js";
+
 const safddafa = {
     Playing: {
-        Chapter: 1,
+        World: "Main",
+        Chapter: "Chapter1",
         Stage: 1
     },
-    Progress: {
-        Chapter: 1,
-        Stage: 1
-    }
+    /** @type {World.<string, string[]>} */
+    Completed: {}
 };
 export default safddafa;

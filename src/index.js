@@ -2,7 +2,7 @@ import contextMenu from "./contextmenu/data.js";
 import MergeField from "./merge/MergeField.js";
 import saveData from "./saveData.js";
 import * as saveload from "./saveload.js";
-import * as Levels from "./Levels/_init.js";
+import * as Worlds from "./Worlds/_init.js";
 
 // For Debuging Purpose
 window.MergeField = MergeField;

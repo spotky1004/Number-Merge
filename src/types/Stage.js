@@ -8,6 +8,7 @@
  * @property {string} Description - Description of the level
  * @property {string[]} Goal - Symbols of the Goal
  * @property {Item[][]} Items - Start item of the level
+ * @property {import("./StageRules.js").LevelRules} stageRules - Special rule of this level
  */
 
 /** @type {Stage} */

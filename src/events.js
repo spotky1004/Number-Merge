@@ -1,6 +1,5 @@
 import MergeField from "./merge/MergeField.js";
 import contextMenu from "./contextmenu/data.js"
-import * as Levels from "./Levels/_init.js";
 
 /**
  * @typedef {object} EventCache

@@ -1,4 +1,4 @@
-/** @type { import("../types/Stage.js").Stage[] } */
+/** @type { import("../../types/Stage.js").Stage[] } */
 const Chapter = [
   {
     Symbol: "1-2X",
