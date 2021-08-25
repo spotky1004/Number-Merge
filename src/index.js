@@ -14,8 +14,10 @@ window.OpenStage = (chapter, stage) => {
 }
 
 function Tick() {
-    // Check The stage is Completed & If stage is completed, increment stage
-
+    // Check The stage is Completed
+    if (MergeField.checkCompleted()) {
+        // do something
+    }
 
     // loop
     requestAnimationFrame(Tick);

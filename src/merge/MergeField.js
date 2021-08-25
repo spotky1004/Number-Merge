@@ -101,6 +101,7 @@ class MergeField {
     }
     checkCompleted() {
         if (this.loadedLevel === null) return false;
+        
         const Items = Object.entries(this.items).map(e => e[1]);
         for (let i = 0; i < this.loadedLevel.Goal.length; i++) {
             const idx = Items.findIndex((e) => e.symbol === this.loadedLevel.Goal[i]);
@@ -110,6 +111,9 @@ class MergeField {
                 return false;
             }
         }
+
+        if (this.loadedLevel.stageRules.MustUseAllItems && Items.length !== 0) return false;
+        return true;
     }
 
     get size() {

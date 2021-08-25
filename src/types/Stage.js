@@ -3,12 +3,12 @@
  */
 /**
  * @typedef {object} Stage
- * @property {string} Symbol - Symbol of the level
- * @property {string} Title - Tiele of the level
- * @property {string} Description - Description of the level
+ * @property {string} Symbol - Symbol of the stage
+ * @property {string} Title - Tiele of the stage
+ * @property {string} Description - Description of the stage
  * @property {string[]} Goal - Symbols of the Goal
- * @property {Item[][]} Items - Start item of the level
- * @property {import("./StageRules.js").LevelRules} stageRules - Special rule of this level
+ * @property {Item[][]} Items - Start item of the stage
+ * @property {import("./StageRules.js").StageRules} stageRules - Special rule of this stage
  */
 
 /** @type {Stage} */
