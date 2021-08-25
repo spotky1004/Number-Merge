@@ -99,6 +99,18 @@ class MergeField {
     reloadStage() {
         this.openStage(this.loadedLevel);
     }
+    checkCompleted() {
+        if (this.loadedLevel === null) return false;
+        const Items = Object.entries(this.items).map(e => e[1]);
+        for (let i = 0; i < this.loadedLevel.Goal.length; i++) {
+            const idx = Items.findIndex((e) => e.symbol === this.loadedLevel.Goal[i]);
+            if (idx !== -1) {
+                Items.splice(idx, 1);
+            } else {
+                return false;
+            }
+        }
+    }
 
     get size() {
         return {

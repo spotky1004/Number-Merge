@@ -1,3 +1,4 @@
+import MergeField from "../merge/MergeField.js";
 import saveData from "../saveData.js";
 
 /**
@@ -33,5 +34,11 @@ export default class World {
                 ...Stage.stageRules
             }
         }
+    }
+
+    openStage(chapter, stageIdx, saveData) {
+        const Stage = this.getStage(chapter, stageIdx, saveData);
+
+        MergeField.openStage(Stage);
     }
 }
