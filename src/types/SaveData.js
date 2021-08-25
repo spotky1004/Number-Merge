@@ -4,7 +4,7 @@ const SaveData = {
     Playing: {
         World: "Main",
         Chapter: "Chapter1",
-        Stage: 1
+        Stage: 0
     },
     Completed: {
         Main: []
