@@ -133,7 +133,7 @@ const Chapter = [
   },
   {
     Symbol: "3-9",
-    Title: "Are you ready for FINAL STAGE of chapter 2?",
+    Title: "Are you ready for FINAL STAGE of chapter 3?",
     Description: "Make -2021",
     Goal: ["-2021"],
     Items: [
