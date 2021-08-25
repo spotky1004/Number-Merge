@@ -12,7 +12,35 @@ const contextMenu = new ContextMenu({
         },
         {
             Title: "Options",
-            
+            Items: [
+                {
+                    Title: "Reset Pogress",
+                    Items: [
+                        {
+                            Title: "Reset Progress (3)",
+                            Items: [
+                                {
+                                    Title: "Reset Progress (2)",
+                                    Items: [
+                                        {
+                                            Title: "Reset Progress (1)",
+                                            Items: [
+                                                {
+                                                    Title: "Reset Progress (Warning!)",
+                                                    func: () => {
+                                                        localStorage.removeItem(LocalStorageKey);
+                                                        location.reload();
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             Title: "Social Links",
