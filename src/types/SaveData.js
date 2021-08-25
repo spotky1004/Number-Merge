@@ -1,4 +1,4 @@
-import * as World from "../Worlds/_init.js";
+import { WorldNames } from "../constants.js";
 
 const SaveData = {
     Playing: {
@@ -6,7 +6,8 @@ const SaveData = {
         Chapter: "Chapter1",
         Stage: 1
     },
-    /** @type {World.<string, string[]>} */
-    Completed: {}
+    Completed: {
+        Main: []
+    }
 };
 export default SaveData;

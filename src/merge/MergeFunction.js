@@ -12,6 +12,7 @@ import ItemTypes from "./ItemTypes.js";
  * @property {function(string, string): string} getNumber
  * @property {function(string, string): string} getOperctor
  * @property {Object.<string, function(string, string): string>} operatorMerge
+ * @property {MergeFunction[]} MergeFunctions
  */
 
 export default class MergeFunction {
@@ -25,22 +26,25 @@ export default class MergeFunction {
         operatorAt,
         getOperctor,
         operatorMerge,
+        MergeFunctions
     }) {
         this.mergeableTypes = mergeableTypes ?? [];
         this.outputMergeType = outputMergeType ?? null;
-        this.fallbackMergeFunction = fallbackMergeFunction ?? [];
+        this.fallbackMergeFunction = fallbackMergeFunction;
         this.defaultMerge = defaultMerge;
         this.operatorAt = operatorAt;
         this.getNumber = getNumber;
         this.getOperctor = getOperctor;
         this.operatorMerge = operatorMerge;
+        this.MergeFunctions = MergeFunctions;
     }
 
     /**
      * @param {MergeItem} mainItem 
      * @param {MergeItem[]} mergeItems 
+     * @param {import("../types/StageRules.js").StageRules} stageRules
      */
-    merge(mainItem, mergeItems) {
+    merge(mainItem, mergeItems, stageRules) {
         // Filter mergeables
         const mergeables = mergeItems.filter((e) => e.hasTag(this.mergeableTypes));
 
@@ -48,7 +52,7 @@ export default class MergeFunction {
             // Do fallback
             if (mergeItems.length >= 1) {
                 if (typeof this.fallbackMergeFunction === "undefined") return;
-                MergeFunctions[this.fallbackMergeFunction].merge(mainItem, mergeItems);
+                this.MergeFunctions[this.fallbackMergeFunction].merge(mainItem, mergeItems);
             }
             return;
         }
@@ -82,7 +86,7 @@ export default class MergeFunction {
         if (
             !isNaN(parseInt(symbol)) &&
             !isNaN(+symbol)
-        ) symbol = Math.max(-Number.MAX_SAFE_INTEGER, Math.min(Number.MAX_SAFE_INTEGER, +symbol));
+        ) symbol = Math.max(stageRules.NumberLimit.min, Math.min(stageRules.NumberLimit.max, +symbol));
         // Add result item in the MergeField
         MergeField.addItem({
             ...ItemTypes[this.outputMergeType](),

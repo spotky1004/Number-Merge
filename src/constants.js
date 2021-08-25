@@ -1,4 +1,5 @@
 export const LocalStorageKey = "number_merge_1";
+export const WorldNames = [ "Main" ];
 /** @type {import("./types/StageRules.js").StageRules} */
 export const DefaultStageRules = {
     MustUseAllItems: false,
