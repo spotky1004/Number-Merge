@@ -74,7 +74,7 @@ export default class MergeFunction {
 
             let a, b;
             if (this.operatorAt === "mainItem") {
-                [a, b] = [+(number ?? mainSymbol), toMergeSymbol];
+                [a, b] = [+(number ?? mainSymbol), +toMergeSymbol];
             } else if (this.operatorAt === "mergeItems") {
                 [a, b] = [+mainSymbol, +(number ?? toMergeSymbol)];
             }
