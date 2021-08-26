@@ -42,13 +42,13 @@ const Chapter = {
         {
             Symbol: "3-4",
             Title: "",
-            Description: "Make 18",
-            Goal: ["18"],
+            Description: "Make 24",
+            Goal: ["24"],
             Items: [
                 [
                     ["number", { symbol: 7 }],
                     ["number", { symbol: 7 }],
-                    ["number", { symbol: 3 }],
+                    ["number", { symbol: 4 }],
                     ["number", { symbol: 2 }],
                 ],
                 [
