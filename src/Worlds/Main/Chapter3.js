@@ -41,7 +41,23 @@ const Chapter = {
         },
         {
             Symbol: "3-4",
-            Title: "",
+            Title: "Plus & Minus",
+            Description: "Make 25",
+            Goal: ["25"],
+            Items: [
+                [
+                    ["number", { symbol: 5 }]
+                ],
+                [
+                    ["operator", { symbol: "!" }],
+                    ["operator", { symbol: "+" }],
+                    ["operator", { symbol: "-" }],
+                ],
+            ],
+        },
+        {
+            Symbol: "3-5",
+            Title: "Multiply & Divide",
             Description: "Make 24",
             Goal: ["24"],
             Items: [
@@ -59,7 +75,7 @@ const Chapter = {
             ],
         },
         {
-            Symbol: "3-5",
+            Symbol: "3-6",
             Title: "What?",
             Description: "Make 2303",
             Goal: ["2303"],
@@ -78,22 +94,6 @@ const Chapter = {
                     ["operator", { symbol: "×" }],
                     ["operator", { symbol: "!" }],
                     ["operator", { symbol: "÷" }],
-                ],
-            ],
-        },
-        {
-            Symbol: "3-6",
-            Title: "Plus & Minus",
-            Description: "Make 25",
-            Goal: ["25"],
-            Items: [
-                [
-                    ["number", { symbol: 5 }]
-                ],
-                [
-                    ["operator", { symbol: "!" }],
-                    ["operator", { symbol: "+" }],
-                    ["operator", { symbol: "-" }],
                 ],
             ],
         },
