@@ -247,4 +247,26 @@ main {
 
     background-color: #fff2;
     border-radius: 0.5vh;
+
+    overflow-y: auto;
+}
+.stage-item {
+    padding: 1%;
+
+    background-color: #5558;
+    border: 2px solid #222;
+    border-radius: 0.5vh;
+
+    cursor: pointer;
+}
+#stage-select-list > .stage-item:not(:last-child) {
+    margin-bottom: 1%;
+}
+.stage-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.stage-description {
+    font-size: 0.8em;
+    margin-bottom: 0.3%;
 }
