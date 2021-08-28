@@ -95,7 +95,7 @@ function displayChapter(idx) {
     }
 }
 
-function addListItem(data, idx) {
+function addListItem(data) {
     const item = document.createElement("div");
     item.classList.add("stage-item");
     stageSelect.append(item);
@@ -104,6 +104,7 @@ function addListItem(data, idx) {
     title.classList.add("stage-title");
     title.innerHTML = data.name ?? data.Symbol ?? "";
     item.append(title);
+    if (data.isCompleted()) title.style.color = "#ebd234";
 
     const description = document.createElement("div");
     description.classList.add("stage-description");

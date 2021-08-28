@@ -51,8 +51,14 @@ export default class World {
     completeStage(saveData) {
         if (typeof MergeField.loadedLevel === "undefined") return;
 
+        const StageSymbol = MergeField.loadedLevel.Symbol;
+        console.log(saveData.Completed[this.name], StageSymbol, saveData.Completed[this.name].includes(StageSymbol));
+        if (!saveData.Completed[this.name].includes(StageSymbol)) {
+            saveData.Completed[this.name].push(StageSymbol);
+        }
+
         const playingChapter = this.chapters[saveData.Playing.Chapter];
-        if (saveData.Playing.Stage + 1 >= playingChapter.stages.length) {
+        if (+saveData.Playing.Stage + 1 >= playingChapter.stages.length) {
             const chapterIdx = this.chapterOrder.findIndex(e => e === saveData.Playing.Chapter);
             if (this.chapterOrder.length > chapterIdx+2) {
                 this.openStage(this.chapterOrder[chapterIdx+1], 0, saveData);
@@ -61,11 +67,6 @@ export default class World {
             }
         } else {
             this.openStage(saveData.Playing.Chapter, +saveData.Playing.Stage + 1, saveData);
-        }
-
-        const StageSymbol = MergeField.loadedLevel.Symbol;
-        if (!saveData.Completed[this.name].includes(StageSymbol)) {
-            saveData.Completed[this.name].push(StageSymbol);
         }
     }
 
@@ -79,5 +80,12 @@ export default class World {
         saveData.Playing.Stage = stage;
 
         return Stage;
+    }
+
+    isCompleted() {
+        for (const chapter in this.chapters) {
+            if (!this.chapters[chapter].isCompleted()) return false;
+        }
+        return true;
     }
 }

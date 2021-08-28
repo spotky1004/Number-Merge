@@ -303,6 +303,9 @@ main {
 .stage-item:hover {
     background-color: #1118;
 }
+.stage-item.completed {
+    background-color: #d4f0c588;
+}
 #stage-select-list > .stage-item:not(:last-child) {
     margin-bottom: 1%;
 }
