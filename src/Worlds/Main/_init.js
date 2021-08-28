@@ -18,7 +18,6 @@ const World = {
         Chapter2,
         Chapter3,
         Chapter4,
-        ChapterExtra,
     },
     isUnlocked: () => true
 };

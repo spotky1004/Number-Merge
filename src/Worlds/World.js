@@ -3,6 +3,7 @@ import Chapter from "./Chapter.js";
 import MergeField from "../merge/MergeField.js";
 import saveData from "../saveData.js";
 import { DefaultStageRules } from "../constants.js";
+import { openStageSelect } from "../util.js";
 
 export default class World {
     /** @param {import("../types/WorldConstructor.js").WorldConstructor} world */
@@ -11,10 +12,12 @@ export default class World {
         this.name = worldName;
         /** @type {Object.<string, Chapter>} */
         this.chapters = {};
-        this.Difficulty = 0;
+        this.minDifficulty = 10;
+        this.maxDifficulty = 0;
         for (const name in world.chapters) {
-            this.chapters[name] = new Chapter(world.chapters[name]);
-            this.Difficulty = Math.max(this.Difficulty, this.chapters[name].difficulty ?? 0)
+            this.chapters[name] = new Chapter(world.chapters[name], this, name);
+            this.minDifficulty = Math.min(this.minDifficulty, this.chapters[name].maxDifficulty || 10);
+            this.maxDifficulty = Math.max(this.maxDifficulty, this.chapters[name].maxDifficulty || 0);
         }
         this.chapterOrder = world.chapterOrder ?? [];
         this.stageRules = world.stageRules ?? {};
@@ -54,10 +57,10 @@ export default class World {
             if (this.chapterOrder.length > chapterIdx+2) {
                 this.openStage(this.chapterOrder[chapterIdx+1], 0, saveData);
             } else {
-                // Open Stage Select
+                openStageSelect();
             }
         } else {
-            this.openStage(saveData.Playing.Chapter, saveData.Playing.Stage + 1, saveData);
+            this.openStage(saveData.Playing.Chapter, +saveData.Playing.Stage + 1, saveData);
         }
 
         const StageSymbol = MergeField.loadedLevel.Symbol;

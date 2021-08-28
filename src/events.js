@@ -3,6 +3,7 @@ import contextMenu from "./contextmenu/data.js";
 import {
     toggleStageSelect
 } from "./util.js";
+import * as StageSelect from "./stageSelect.js";
 
 /**
  * @typedef {object} EventCache
@@ -21,17 +22,29 @@ document.addEventListener("mousedown", (e) => {
     EventCache.target = target;
     EventCache.isMouseDown = true;
     
+    // contextMenu
     if (
         !target.classList.contains("context-menu") &&
         !target.parentElement.classList.contains("context-menu") &&
         !target.parentElement.parentElement.classList.contains("context-menu")
     ) contextMenu.close();
-
-    if (target.id === "stage-select-bg") {
-        target.style.display = "none";
-    }
 }, false);
 document.addEventListener("mouseup", (e) => {
+    /** @type {HTMLElement} */
+    const target = e.target;
+    if (target) {
+        // levelSelect
+        if (target.id === "stage-select-bg") target.style.display = "none";
+        if (
+            target.classList.contains("stage-item") ||
+            target.parentElement.classList.contains("stage-item")
+        ) {
+            const idx = target.dataset.idx ?? target.parentElement.dataset.idx;
+            StageSelect.selected(idx);
+        }
+        if (target.id === "stage-select-back") StageSelect.selected("back");
+    }
+
     if (!EventCache.target) {
         EventCache.target = null;
         EventCache.isMouseDown = false;
@@ -89,6 +102,9 @@ document.addEventListener("keydown", (e) => {
             break;
         case "KeyS":
             toggleStageSelect();
+            break;
+        case "Escape": case "Backspace":
+            StageSelect.selected("back");
             break;
     }
 });

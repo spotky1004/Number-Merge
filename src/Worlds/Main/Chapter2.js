@@ -1,6 +1,8 @@
 /** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
     description: "A chapter about Negative Numbers",
+    isUnlocked: (saveData) => saveData.Completed.Main.length >= 8,
+    unlockMessage: (saveData) => `Complete at last ${saveData.Completed.Main.length}/8 Stage to unlock this Chapter`,
     stages: [
         {
             Symbol: "2-1",

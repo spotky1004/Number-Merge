@@ -1,6 +1,7 @@
 /** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
     description: "A chapter about Operators",
+    isUnlocked: (saveData) => true,
     stages: [
         {
             Symbol: "1-1",
