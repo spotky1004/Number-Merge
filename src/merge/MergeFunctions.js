@@ -16,7 +16,12 @@ MergeFunctions.number = new MergeFunction({
         "-": (a, _) => a - 1,
         "×": (a, _) => a ** 2,
         "÷": (a, _) => 1,
-        "!": (a, _) => Operators.factorial(a)
+        "!": (a, _) => Operators.factorial(a),
+        "|": (a, _) => Math.abs(a),
+        "%": (a, _) => 0,
+        ">": (a, _) => (a+"").slice(0, -1) || "0",
+        "<": (a, _) => a+"0",
+        "√": (a, _) => Math.floor(Math.sqrt(a))
     },
     MergeFunctions
 });
@@ -42,7 +47,12 @@ MergeFunctions.term = new MergeFunction({
         "-": (a, b) => a - b,
         "×": (a, b) => a * b,
         "÷": (a, b) => Math.floor(a / b),
-        "!": (a, b) => Operators.factorial(a, b)
+        "!": (a, b) => Operators.factorial(a, b),
+        "|": (a, b) => "NaN", // Warning: This can be changed anytime
+        "%": (a, b) => a % b,
+        ">": (a, b) => (a+"").slice(0, -1) + (b+"").slice(-1),
+        "<": (a, b) => "NaN", // Warning: This can be changed anytime
+        "√": (a, b) => Math.floor( b ** (1/a) )
     },
     MergeFunctions
 })
