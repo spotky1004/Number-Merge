@@ -4,6 +4,7 @@ import MergeField from "../merge/MergeField.js";
 import saveData from "../saveData.js";
 import { DefaultStageRules } from "../constants.js";
 import { openStageSelect } from "../util.js";
+import { displayWorlds } from "../stageSelect.js";
 
 export default class World {
     /** @param {import("../types/WorldConstructor.js").WorldConstructor} world */
@@ -68,6 +69,8 @@ export default class World {
         } else {
             this.openStage(saveData.Playing.Chapter, +saveData.Playing.Stage + 1, saveData);
         }
+
+        displayWorlds(); // To reset completed level highlight
     }
 
     openStage(chapter, stage, saveData) {

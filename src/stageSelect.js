@@ -49,7 +49,7 @@ export function selected(param) {
 
 const stageSelectTitle = document.getElementById("stage-select-title");
 const stageSelect = document.getElementById("stage-select-list");
-function displayWorlds() {
+export function displayWorlds() {
     stageSelectStatus.watching = "Worlds";
     stageSelectStatus.data = Worlds;
     stageSelectTitle.innerHTML = "Worlds";
