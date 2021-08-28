@@ -1,6 +1,6 @@
-/** @type { import("../../types/Chapter").Chapter } */
+/** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
-    description: "A chapter about negative numbers",
+    description: "A chapter about Negative Numbers",
     stages: [
         {
             Symbol: "2-1",

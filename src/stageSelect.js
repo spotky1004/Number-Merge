@@ -3,7 +3,7 @@ import saveData from "./saveData.js";
 import Worlds from "./Worlds/_init.js";
 // types
 import World from "./Worlds/World.js";
-import Chapter from "./types/Chapter.js";
+import Chapter from "./types/ChapterConstructor.js";
 import Stage from "./types/Stage.js";
 
 

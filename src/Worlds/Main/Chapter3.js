@@ -1,6 +1,6 @@
-/** @type { import("../../types/Chapter").Chapter } */
+/** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
-    description: "A chapter about factroials",
+    description: "A chapter about Factorials",
     stages: [
         {
             Symbol: "3-1",

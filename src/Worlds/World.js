@@ -1,3 +1,5 @@
+import Chapter from "./Chapter.js";
+
 import MergeField from "../merge/MergeField.js";
 import saveData from "../saveData.js";
 import { DefaultStageRules } from "../constants.js";
@@ -7,7 +9,12 @@ export default class World {
     constructor(world, worldName) {
         /** @type {string} */
         this.name = worldName;
-        this.chapters = world.chapters ?? {};
+        /** @type {Object.<string, Chapter>} */
+        this.chapters = {};
+        for (const name in world.chapters) {
+            this.chapters[name] = new Chapter(world.chapters[name]);
+        }
+        console.log(this.chapters);
         this.chapterOrder = world.chapterOrder ?? [];
         this.stageRules = world.stageRules ?? {};
         this.isUnlocked = world.isUnlocked;

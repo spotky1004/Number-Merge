@@ -1,6 +1,6 @@
 // Chapter by User_2.005e220
 
-/** @type { import("../../types/Chapter").Chapter } */
+/** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
     stages: [
         {

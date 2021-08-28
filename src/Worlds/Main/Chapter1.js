@@ -1,6 +1,6 @@
-/** @type { import("../../types/Chapter").Chapter } */
+/** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
-    description: "Welcome to the Number-Merge! You'll learn about basic operators!",
+    description: "A chapter about Operators",
     stages: [
         {
             Symbol: "1-1",
