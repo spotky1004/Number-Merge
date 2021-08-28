@@ -70,7 +70,7 @@ export default class World {
             this.openStage(saveData.Playing.Chapter, +saveData.Playing.Stage + 1, saveData);
         }
 
-        displayWorlds(); // To reset completed level highlight
+        displayWorlds(); // To reset completed stage highlight
     }
 
     openStage(chapter, stage, saveData) {
