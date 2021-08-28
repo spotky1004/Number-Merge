@@ -3,7 +3,7 @@ import Chapter69 from "./69.js";
 
 /** @type {import("../../types/WorldConstructor.js").WorldConstructor} */
 const World = {
-    description: "The world made my community",
+    description: "The world made by community",
     chapterOrder: [
         "Chapter666",
         "Chapter69",

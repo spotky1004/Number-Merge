@@ -11,10 +11,11 @@ export default class World {
         this.name = worldName;
         /** @type {Object.<string, Chapter>} */
         this.chapters = {};
+        this.Difficulty = 0;
         for (const name in world.chapters) {
             this.chapters[name] = new Chapter(world.chapters[name]);
+            this.Difficulty = Math.max(this.Difficulty, this.chapters[name].difficulty ?? 0)
         }
-        console.log(this.chapters);
         this.chapterOrder = world.chapterOrder ?? [];
         this.stageRules = world.stageRules ?? {};
         this.isUnlocked = world.isUnlocked;

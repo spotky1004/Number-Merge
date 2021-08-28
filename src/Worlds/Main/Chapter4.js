@@ -1,6 +1,6 @@
 /** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
-    description: "A chapter about Incrementer"
+    description: "A chapter about Incrementer",
     stages: [
         {
             Symbol: "GG",
