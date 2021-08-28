@@ -66,8 +66,8 @@ const Chapter = {
             Symbol: "3-5",
             Difficulty: 5,
             Title: "Multiply & Divide",
-            Description: "Make 24",
-            Goal: ["24"],
+            Description: "Make 240",
+            Goal: ["240"],
             Items: [
                 [
                     ["number", { symbol: 7 }],
