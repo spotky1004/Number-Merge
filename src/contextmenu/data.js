@@ -2,6 +2,9 @@ import ContextMenu from "./ContextMenu.js";
 
 import MergeField from "../merge/MergeField.js";
 import { LocalStorageKey } from "../constants.js";
+import {
+    toggleStageSelect
+} from "../util.js";
 
 const contextMenu = new ContextMenu({
     Title: "Menu",
@@ -9,6 +12,10 @@ const contextMenu = new ContextMenu({
         {
             Title: "Restart (R)",
             func: () => MergeField.reloadStage()
+        },
+        {
+            Title: "Stage Select (S)",
+            func: () => toggleStageSelect()
         },
         {
             Title: "Options",

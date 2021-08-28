@@ -7,7 +7,8 @@ const SaveData = {
         Stage: 0
     },
     Completed: {
-        Main: []
+        Main: [],
+        Community: [],
     }
 };
 export default SaveData;

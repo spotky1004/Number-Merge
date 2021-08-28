@@ -46,7 +46,10 @@ export default class ContextMenu {
                     itemNode.onclick = (e) => this.Items[i].openAt(e.clientX, e.clientY);
                 } else {
                     const isClickable = ItemData.clickable ? ItemData.clickable(saveData) : true;
-                    if (isClickable) itemNode.onclick = (e) => ItemData.func(saveData);
+                    if (isClickable) itemNode.onclick = (e) => {
+                        ItemData.func(saveData);
+                        this.close();
+                    }
                 }
                 itemNode.innerText = ItemData.Title;
     

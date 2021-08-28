@@ -42,7 +42,7 @@ header {
     background-color: var(--col1);
     box-shadow: 0 0 2vh var(--col1);
 
-    z-index: 5;
+    z-index: 1;
 }
 #stage-symbol {
     flex: 2;
@@ -105,6 +105,10 @@ header {
 main {
     flex: 10;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background-color: var(--col1-1);
 }
 
@@ -113,11 +117,11 @@ main {
     margin: 0 auto;
 
     width: 80vw;
-    height: 100%;
+    height: 95%;
 
     background-color: #8888;
     box-shadow: 0 0 1.5vh var(--col1-1) inset;
-    border-radius: 5vh;
+    border-radius: 1vh;
 }
 .merge-item {
     display: inline-block;
@@ -159,6 +163,8 @@ main {
     
     border-radius: 0.2vh;
     background-color: var(--col1-1);
+
+    z-index: 9999;
 }
 .context-menu > .title {
     padding: 0.2vh 0.9vw;
@@ -182,4 +188,34 @@ main {
 }
 .context-menu > .item-container > div:hover {
     background-color: #fff4;
+}
+
+#stage-select-bg {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #222a;
+
+    cursor: pointer;
+    z-index: 2;
+}
+#stage-select {
+    width: 60%;
+    height: 60%;
+
+    color: #fff;
+
+    box-shadow: 0 0 1vh #222;
+    border: 2px solid #222;
+    background: rgb(68,68,68);
+    background: linear-gradient(180deg, rgba(68,68,68,1) 0%, rgba(119,119,119,1) 10%, rgba(119,119,119,1) 17%, rgba(68,68,68,1) 100%);
+
+    cursor: auto;
 }

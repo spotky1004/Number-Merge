@@ -1,5 +1,8 @@
 import MergeField from "./merge/MergeField.js";
-import contextMenu from "./contextmenu/data.js"
+import contextMenu from "./contextmenu/data.js";
+import {
+    toggleStageSelect
+} from "./util.js";
 
 /**
  * @typedef {object} EventCache
@@ -19,10 +22,14 @@ document.addEventListener("mousedown", (e) => {
     EventCache.isMouseDown = true;
     
     if (
-        !e.target.classList.contains("context-menu") &&
-        !e.target.parentElement.classList.contains("context-menu") &&
-        !e.target.parentElement.parentElement.classList.contains("context-menu")
+        !target.classList.contains("context-menu") &&
+        !target.parentElement.classList.contains("context-menu") &&
+        !target.parentElement.parentElement.classList.contains("context-menu")
     ) contextMenu.close();
+
+    if (target.id === "level-select-bg") {
+        target.style.display = "none";
+    }
 }, false);
 document.addEventListener("mouseup", (e) => {
     if (!EventCache.target) {
@@ -76,7 +83,12 @@ window.addEventListener("blur", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key === "r") {
-        MergeField.reloadStage();
+    switch (e.code) {
+        case "KeyR":
+            MergeField.reloadStage();
+            break;
+        case "KeyS":
+            toggleStageSelect();
+            break;
     }
 });
