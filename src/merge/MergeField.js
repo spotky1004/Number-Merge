@@ -1,7 +1,9 @@
 import MergeItem from "./MergeItem.js";
+
 import MergeFunctions from "./MergeFunctions.js";
 import MergeItemConstructor from "../types/MergeItemConstructor.js";
 import ItemTypes from "./ItemTypes.js";
+import { displayWorlds } from "../stageSelect.js";
 
 
 class MergeField {
@@ -113,6 +115,8 @@ class MergeField {
         }
 
         if (this.loadedLevel.stageRules.MustUseAllItems && Items.length !== 0) return false;
+
+        displayWorlds(); // To reset completed stage highlight
         return true;
     }
 
