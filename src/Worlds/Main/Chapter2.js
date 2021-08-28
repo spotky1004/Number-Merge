@@ -1,8 +1,10 @@
 /** @type { import("../../types/Chapter").Chapter } */
 const Chapter = {
+    description: "A chapter about negative numbers",
     stages: [
         {
             Symbol: "2-1",
+            Difficulty: 0,
             Title: "Minus!",
             Description: "Make -2",
             Goal: ["-2"],
@@ -15,6 +17,7 @@ const Chapter = {
         },
         {
             Symbol: "2-2",
+            Difficulty: 1,
             Title: "Minus-Minus",
             Description: "Make 4",
             Goal: ["4"],
@@ -30,6 +33,7 @@ const Chapter = {
         },
         {
             Symbol: "2-3",
+            Difficulty: 3,
             Title: "",
             Description: "Make -75",
             Goal: ["-75"],
@@ -47,6 +51,7 @@ const Chapter = {
         },
         {
             Symbol: "2-4",
+            Difficulty: 4,
             Title: "Reverse",
             Description: "Make -50",
             Goal: ["-50"],
@@ -69,6 +74,7 @@ const Chapter = {
         },
         {
             Symbol: "2-5",
+            Difficulty: 3,
             Title: "Minus Zero",
             Description: "Make -32",
             Goal: ["-32"],
@@ -93,6 +99,7 @@ const Chapter = {
         },
         {
             Symbol: "2-6",
+            Difficulty: 4,
             Title: "-8 bit",
             Description: "Make -256",              
             Goal: ["-256"],
@@ -117,6 +124,7 @@ const Chapter = {
         },
         {
             Symbol: "2-7",
+            Difficulty: 4,
             Title: "!sumiMinus!",
             Description: "-25-",
             Goal: ["-25-"],
@@ -142,6 +150,7 @@ const Chapter = {
         },
         {
             Symbol: "2-8",
+            Difficulty: 5,
             Title: "Primes",
             Description: "Make three Zeros",
             Goal: ["0", "0", "0"],
@@ -162,6 +171,7 @@ const Chapter = {
         },
         {
             Symbol: "2-9",
+            Difficulty: 6,
             Title: "Approximate III",
             Description: "Make -35",
             Goal: ["-35"],
@@ -179,6 +189,7 @@ const Chapter = {
         },
         {
             Symbol: "2-10",
+            Difficulty: 3,
             Title: "The last stage",
             Description: "3ND-0F-TH3-CHAPTER-2",
             Goal: ["3ND-0F-TH3-CHAPTER-2"],

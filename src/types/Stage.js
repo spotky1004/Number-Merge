@@ -4,6 +4,7 @@
 /**
  * @typedef {object} Stage
  * @property {string} Symbol - Symbol of the stage
+ * @property {number} Difficulty - Difficulty of the stage
  * @property {string} Title - Tiele of the stage
  * @property {string} Description - Description of the stage
  * @property {string[]} Goal - Symbols of the Goal

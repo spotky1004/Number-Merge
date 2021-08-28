@@ -1,8 +1,10 @@
 /** @type { import("../../types/Chapter").Chapter } */
 const Chapter = {
+    description: "Welcome to the Number-Merge! You'll learn about basic operators!",
     stages: [
         {
             Symbol: "1-1",
+            Difficulty: 0,
             Title: "Welcome",
             Description: "Make 10",
             Goal: ["10"],
@@ -17,6 +19,7 @@ const Chapter = {
         },
         {
             Symbol: "1-2",
+            Difficulty: 0,
             Description: "Make two 5",
             Title: "Double",
             Goal: ["5", "5"],
@@ -31,6 +34,7 @@ const Chapter = {
         },
         {
             Symbol: "1-3",
+            Difficulty: 1,
             Title: "Increment",
             Description: "Make 4 and 7",
             Goal: ["4", "7"],
@@ -45,6 +49,7 @@ const Chapter = {
         },
         {
             Symbol: "1-4",
+            Difficulty: 1,
             Title: "Calculate",
             Description: "Make 3",
             Goal: ["3"],
@@ -56,6 +61,7 @@ const Chapter = {
         },
         {
             Symbol: "1-5",
+            Difficulty: 1,
             Title: "Increment & Calculate",
             Description: "Make 15",
             Goal: ["15"],
@@ -70,6 +76,7 @@ const Chapter = {
         },
         {
             Symbol: "1-6",
+            Difficulty: 2,
             Title: "A big number",
             Description: "Make 100",
             Goal: ["100"],
@@ -84,6 +91,7 @@ const Chapter = {
         },
         {
             Symbol: "1-7",
+            Difficulty: 2,
             Title: "Divide",
             Description: "Make 6",
             Goal: ["6"],
@@ -98,6 +106,7 @@ const Chapter = {
         },
         {
             Symbol: "1-8",
+            Difficulty: 3,
             Title: "Approximate",
             Description: "Make 9",
             Goal: ["9"],
@@ -115,6 +124,7 @@ const Chapter = {
         },
         {
             Symbol: "1-9",
+            Difficulty: 3,
             Title: "8 bit",
             Description: "Make 256",
             Goal: ["256"],
@@ -139,6 +149,7 @@ const Chapter = {
         },
         {
             Symbol: "1-10",
+            Difficulty: 4,
             Title: "Approximate II",
             Description: "Make 9, 9, 11, 11",
             Goal: ["9", "9", "11", "11"],

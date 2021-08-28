@@ -6,6 +6,7 @@ import ChapterExtra from "./ChapterExtra.js";
 
 /** @type {import("../../types/WorldConstructor.js").WorldConstructor} */
 const World = {
+    description: "The starting world!",
     chapterOrder: [
         "Chapter1",
         "Chapter2",

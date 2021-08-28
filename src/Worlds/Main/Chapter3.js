@@ -1,8 +1,10 @@
 /** @type { import("../../types/Chapter").Chapter } */
 const Chapter = {
+    description: "A chapter about factroials",
     stages: [
         {
             Symbol: "3-1",
+            Difficulty: 0,
             Title: "Factorials!",
             Description: "Make 120",
             Goal: ["120"],
@@ -10,6 +12,7 @@ const Chapter = {
         },
         {
             Symbol: "3-2",
+            Difficulty: 1,
             Title: "pseudo-Factorials!",
             Description: "Make 12",
             Goal: ["12"],
@@ -25,6 +28,7 @@ const Chapter = {
         },
         {
             Symbol: "3-3",
+            Difficulty: 3,
             Title: "Harder?",
             Description: "Make 144",
             Goal: ["144"],
@@ -41,6 +45,7 @@ const Chapter = {
         },
         {
             Symbol: "3-4",
+            Difficulty: 3,
             Title: "Plus & Minus",
             Description: "Make 25",
             Goal: ["25"],
@@ -57,6 +62,7 @@ const Chapter = {
         },
         {
             Symbol: "3-5",
+            Difficulty: 5,
             Title: "Multiply & Divide",
             Description: "Make 24",
             Goal: ["24"],
@@ -76,6 +82,7 @@ const Chapter = {
         },
         {
             Symbol: "3-6",
+            Difficulty: 6,
             Title: "What?",
             Description: "Make 2303",
             Goal: ["2303"],
@@ -99,6 +106,7 @@ const Chapter = {
         },
         {
             Symbol: "3-7",
+            Difficulty: 5,
             Title: "A BiT CoMpLiCaTeD",
             Description: "Make 505",
             Goal: ["505"],
@@ -118,6 +126,7 @@ const Chapter = {
         },
         {
             Symbol: "3-8",
+            Difficulty: 1,
             Title: "What is negative factorial in this game?",
             Description: "Find the definition by your own and make 2",
             Goal: ["2"],
@@ -138,6 +147,7 @@ const Chapter = {
         },
         {
             Symbol: "3-9",
+            Difficulty: 7,
             Title: "Are you ready for FINAL STAGE of chapter 3?",
             Description: "Make -2021",
             Goal: ["-2021"],
@@ -157,6 +167,7 @@ const Chapter = {
         },
         {
             Symbol: "3-10",
+            Difficulty: 8,
             Title: "Final stage of chapter 3",
             Description: "Make 2310",
             Goal: ["2310"],

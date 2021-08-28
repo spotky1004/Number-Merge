@@ -27,7 +27,7 @@ document.addEventListener("mousedown", (e) => {
         !target.parentElement.parentElement.classList.contains("context-menu")
     ) contextMenu.close();
 
-    if (target.id === "level-select-bg") {
+    if (target.id === "stage-select-bg") {
         target.style.display = "none";
     }
 }, false);
