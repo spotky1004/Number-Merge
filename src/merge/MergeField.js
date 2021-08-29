@@ -117,8 +117,6 @@ class MergeField {
         }
 
         if (this.loadedLevel.stageRules.MustUseAllItems && Items.length !== 0) return false;
-
-        displayWorlds(); // To reset completed stage highlight
         return true;
     }
 

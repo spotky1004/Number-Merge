@@ -60,6 +60,8 @@ export function displayWorlds() {
         const World = Worlds[name];
         const item = addListItem(World, i);
 
+        item.childNodes[0].innerText += ` | ${saveData.Completed[name].length} Completed`
+
         item.dataset.idx = i;
         i++;
     }

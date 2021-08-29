@@ -2,6 +2,7 @@ import MergeField from "./merge/MergeField.js";
 import saveData from "./saveData.js";
 import * as saveload from "./saveload.js";
 import Worlds from "./Worlds/_init.js";
+import * as StageSelect from "./stageSelect.js";
 
 
 
@@ -32,6 +33,7 @@ function Tick() {
     // Check The stage is Completed
     if (MergeField.checkCompleted()) {
         Worlds[saveData.Playing.World].completeStage(saveData);
+        StageSelect.displayWorlds(); // To reset completed stage highlight
     }
 
     // loop
