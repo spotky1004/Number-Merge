@@ -2,7 +2,7 @@
 const Chapter = {
     description: "A chapter about Factorials",
     isUnlocked: (saveData) => saveData.Completed.Main.length >= 18,
-    unlockMessage: (saveData) => `Complete at last ${saveData.Completed.Main.length}/18 Stage to unlock this Chapter`,
+    unlockMessage: (saveData) => `Complete at least ${saveData.Completed.Main.length}/18 Stage to unlock this Chapter`,
     stages: [
         {
             Symbol: "3-1",
