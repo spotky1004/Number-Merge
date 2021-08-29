@@ -16,6 +16,6 @@ export default class Stage {
     }
 
     isCompleted() {
-        return saveData.Completed[this.parent.parent.name].includes(this.Symbol);
+        return saveData.Completed[this.parent.parent.name].includes(this.parent.name + "__" + this.Symbol);
     }
 }
