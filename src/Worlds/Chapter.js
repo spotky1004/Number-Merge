@@ -11,9 +11,9 @@ export default class Chapter {
         this.stageRules = chapter.stageRules ?? {};
         /** @type {Stage[]} */
         this.stages = chapter.stages.map(e => new Stage(e, this));
-        this.minDifficulty = this.stages.reduce((a, b) => Math.min(a, b.Difficulty || 10), 10);
+        this.minDifficulty = this.stages.reduce((a, b) => Math.min(a, b.Difficulty ?? 10), 10);
         if (this.stages.length === 0) this.minDifficulty = 0;
-        this.maxDifficulty = this.stages.reduce((a, b) => Math.max(a, b.Difficulty || 0), 0);
+        this.maxDifficulty = this.stages.reduce((a, b) => Math.max(a, b.Difficulty ?? 0), 0);
         /** @type {World} */
         this.parent = parent;
     }

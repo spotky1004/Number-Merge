@@ -127,12 +127,19 @@ function addListItem(data) {
             #333 ${_difficulty[1]*10}%
         )`;
     } else if (typeof data.Difficulty !== "undefined") {
-        const _difficulty = data.Difficulty;
+        const _difficulty = data.Difficulty ?? -1;
         difficulty.innerText = _difficulty.toFixed(1);
         difficulty.style.background = `linear-gradient(
             90deg,
             ${difficultyColor(_difficulty)} ${_difficulty*10}%,
             #333 ${_difficulty*10}%
+        )`;
+    } else {
+        difficulty.innerText = "Not rated yet";
+        difficulty.style.background = `linear-gradient(
+            90deg,
+            #333 0%,
+            #333 100%
         )`;
     }
     item.append(difficulty);
