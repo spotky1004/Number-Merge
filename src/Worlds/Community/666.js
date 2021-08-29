@@ -2,6 +2,7 @@
 
 /** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
+    description: "You need to make 666 - by User_2.005e220",
     stages: [
         {
             Symbol: "1-1",
