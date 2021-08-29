@@ -127,7 +127,7 @@ const Chapter = {
         {
             Symbol: "2-7",
             Difficulty: 4,
-            Title: "!sumiMinus!",
+            Title: "!suniMinus!",
             Description: "-25-",
             Goal: ["-25-"],
             Items: [
