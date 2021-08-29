@@ -4,6 +4,7 @@ const Chapter = {
     stages: [
         {
             Symbol: "Σ-1",
+            Difficulty: 2,
             Title: "Sigma",
             Description: "Make 21",
             Goal: ["21"],
@@ -22,6 +23,7 @@ const Chapter = {
         },
         {
             Symbol: "Σ-2",
+            Difficulty: 3,
             Description: "Make 22",
             Title: "nΣm",
             Goal: ["22"],
@@ -40,6 +42,7 @@ const Chapter = {
         },
         {
             Symbol: "Σ-3",
+            Difficulty: 5,
             Title: "",
             Description: "Make 98",
             Goal: ["98"],
@@ -59,6 +62,7 @@ const Chapter = {
         },
         {
             Symbol: "Σ-4",
+            Difficulty: 4,
             Title: "Factorials & Sigmas",
             Description: "Make 129",
             Goal: ["129"],
@@ -76,6 +80,7 @@ const Chapter = {
         },
         {
             Symbol: "Σ-5",
+            Difficulty: 6,
             Title: "",
             Description: "Make 627",
             Goal: ["627"],
