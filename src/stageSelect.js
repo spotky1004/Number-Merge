@@ -110,7 +110,7 @@ function addListItem(data) {
 
     const description = document.createElement("div");
     description.classList.add("stage-description");
-    description.innerHTML = data.description ?? "";
+    description.innerHTML = data.description ?? data.Title ?? "";
     item.append(description);
 
     const difficulty = document.createElement("div");
