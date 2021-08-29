@@ -54,7 +54,7 @@ MergeFunctions.term = new MergeFunction({
         ">": (a, b) => (a+"").slice(0, -1) + (b+"").slice(-1),
         "<": (a, b) => "NaN", // Warning: This can be changed anytime
         "√": (a, b) => Math.floor( b ** (1/a) ),
-        "Σ": (a, b) => Operators.sigma(a),
+        "Σ": (a, b) => Operators.sigma(a, b),
     },
     MergeFunctions
 })
