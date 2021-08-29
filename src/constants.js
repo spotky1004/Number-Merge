@@ -1,4 +1,4 @@
-export const LocalStorageKey = "number_merge_1";
+export const LocalStorageKey = "number_merge_2";
 export const WorldNames = [ "Main", "Community" ];
 /** @type {import("./types/StageRules.js").StageRules} */
 export const DefaultStageRules = {
