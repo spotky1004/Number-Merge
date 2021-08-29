@@ -1,5 +1,3 @@
-// Chapter by User_2.005e220
-
 /** @type { import("../../types/ChapterConstructor").ChapterConstructor } */
 const Chapter = {
     description: "You need to make goal with 6 and 9 - by User_2.005e220",
