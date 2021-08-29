@@ -112,7 +112,7 @@ const Chapter = {
             Symbol: "1-8",
             Difficulty: 3,
             stageRules: {
-                MustUseAllItems: true
+                MustUseAllItems: true,
             },
             Title: "Approximate",
             Description: "Make 9",

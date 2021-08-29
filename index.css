@@ -42,7 +42,7 @@ header {
     background-color: var(--col1);
     box-shadow: 0 0 2vh var(--col1);
 
-    z-index: 1;
+    z-index: 5;
 }
 #stage-symbol {
     flex: 2;
@@ -103,6 +103,8 @@ header {
 
 
 main {
+    position: relative;
+
     flex: 10;
 
     display: flex;
@@ -327,4 +329,40 @@ main {
 .stage-difficulty::before {
     content: "Difficulty: ";
     font-weight: initial;
+}
+
+#stage-rule-display {
+    padding: 1vh 3vw;
+
+    position: absolute;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+
+    text-align: center;
+    color: #fff;
+
+    background-color: #fff3;
+    box-shadow: 0 0 0.8vh #ff8888;
+    border-radius: 0 0 0.5vh 0.5vh;
+    --border: 2px solid #ff8888;
+    border-bottom: var(--border);
+    border-left: var(--border);
+    border-right: var(--border);
+
+    backdrop-filter: blur(0.6vh);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+#stage-rule-title {
+    font-size: 1.3em;
+    font-weight: bold;
+
+    color: #ff8888;
+}
+#stage-rule-list > div {
+    display:list-item;
+    list-style: circle;
 }

@@ -7,6 +7,8 @@ import { displayWorlds } from "../stageSelect.js";
 
 import Stage from "../Worlds/Stage.js"
 
+const StageRule = document.getElementById("stage-rule-display");
+const StageRuleList = document.getElementById("stage-rule-list");
 
 class MergeField {
     constructor() {
@@ -69,16 +71,19 @@ class MergeField {
 
     /** @param {import("../types/Stage.js").Stage} stage */
     openStage(stage) {
+        // Remove all MergeItems
         for (const id in this.items) {
             this.removeItem(id);
         }
 
+        // Level datas
         this.title = {
             Symbol: stage.Symbol,
             Description: stage.Description,
             Title: stage.Title
         };
 
+        // Spawn MergeItems
         for (let i = 0; i < stage.Items.length; i++) {
             const Line = stage.Items[i];
             const y = 0.5 + (i - stage.Items.length/2) * this.#layout.LineGap;
@@ -94,6 +99,26 @@ class MergeField {
             }
         }
 
+        // StageRule display
+        StageRuleList.innerHTML = "";
+        let toDisplay = [];
+        const sr = stage.stageRules;
+        if (sr.MustUseAllItems) toDisplay.push("Must use all Items!");
+        if (
+            sr.NumberLimit.min !== Number.MIN_SAFE_INTEGER ||
+            sr.NumberLimit.max !== Number.MAX_SAFE_INTEGER
+        ) {
+            toDisplay.push(`Number Range: ${sr.NumberLimit.min ?? Number.MIN_SAFE_INTEGER} ~  ${sr.NumberLimit.max ?? Number.MAX_SAFE_INTEGER}`);
+        }
+        for (let i = 0; i < toDisplay.length; i++) {
+            const item = document.createElement("div");
+            item.innerText = toDisplay[i];
+            StageRuleList.appendChild(item);
+        }
+        if (toDisplay.length === 0) StageRule.style.display = "none";
+        else StageRule.style.display = "";
+
+        // Set loadedLevel
         this.loadedLevel = stage;
     }
     #layout = {
