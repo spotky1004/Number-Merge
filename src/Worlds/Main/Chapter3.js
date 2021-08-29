@@ -170,6 +170,9 @@ const Chapter = {
         {
             Symbol: "3-10",
             Difficulty: 8,
+            stageRules: {
+                MustUseAllItems: true
+            },
             Title: "Final stage of chapter 3",
             Description: "Make 2310",
             Goal: ["2310"],

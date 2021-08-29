@@ -78,6 +78,9 @@ const Chapter = {
         {
             Symbol: "1-6",
             Difficulty: 2,
+            stageRules: {
+                MustUseAllItems: true
+            },
             Title: "A big number",
             Description: "Make 100",
             Goal: ["100"],
@@ -108,6 +111,9 @@ const Chapter = {
         {
             Symbol: "1-8",
             Difficulty: 3,
+            stageRules: {
+                MustUseAllItems: true
+            },
             Title: "Approximate",
             Description: "Make 9",
             Goal: ["9"],
