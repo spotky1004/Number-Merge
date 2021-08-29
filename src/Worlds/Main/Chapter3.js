@@ -64,6 +64,9 @@ const Chapter = {
         },
         {
             Symbol: "3-5",
+            stageRules: {
+                MustUseAllItems: true
+            },
             Difficulty: 5,
             Title: "Multiply & Divide",
             Description: "Make 240",
