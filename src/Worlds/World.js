@@ -51,7 +51,7 @@ export default class World {
     completeStage(saveData) {
         if (typeof MergeField.loadedLevel === "undefined") return;
 
-        const StageSymbol = MergeField.loadedLevel.Symbol;
+        const StageSymbol = MergeField.loadedLevel.parent.name + "__" + MergeField.loadedLevel.Symbol;
         if (!saveData.Completed[this.name].includes(StageSymbol)) {
             saveData.Completed[this.name].push(StageSymbol);
         }

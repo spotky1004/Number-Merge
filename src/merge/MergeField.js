@@ -5,6 +5,8 @@ import MergeItemConstructor from "../types/MergeItemConstructor.js";
 import ItemTypes from "./ItemTypes.js";
 import { displayWorlds } from "../stageSelect.js";
 
+import Stage from "../Worlds/Stage.js"
+
 
 class MergeField {
     constructor() {
@@ -17,7 +19,7 @@ class MergeField {
             Title: document.getElementById("stage-title"),
             Description: document.getElementById("stage-description")
         };
-        /** @type {import("../types/Stage.js").Stage} */
+        /** @type {Stage} */
         this.loadedLevel = null;
     }
 
