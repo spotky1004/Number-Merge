@@ -11,13 +11,13 @@ const World = {
         "Chapter1",
         "Chapter2",
         "Chapter3",
-        "Chapter4",
+        // "Chapter4",
     ],
     chapters: {
         Chapter1,
         Chapter2,
         Chapter3,
-        Chapter4,
+        // Chapter4,
     },
     isUnlocked: () => true
 };
