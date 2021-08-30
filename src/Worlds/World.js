@@ -3,7 +3,7 @@ import Chapter from "./Chapter.js";
 import MergeField from "../merge/MergeField.js";
 import saveData from "../saveData.js";
 import { DefaultStageRules } from "../constants.js";
-import { openStageSelect } from "../util.js";
+import { toggleStageSelect } from "../util.js";
 
 export default class World {
     /** @param {import("../types/WorldConstructor.js").WorldConstructor} world */
@@ -62,7 +62,7 @@ export default class World {
             if (this.chapterOrder.length > chapterIdx+2) {
                 this.openStage(this.chapterOrder[chapterIdx+1], 0, saveData);
             } else {
-                openStageSelect();
+                toggleStageSelect();
             }
         } else {
             this.openStage(saveData.Playing.Chapter, +saveData.Playing.Stage + 1, saveData);
