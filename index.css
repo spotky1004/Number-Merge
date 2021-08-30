@@ -206,7 +206,7 @@ main {
     background-color: #222a;
 
     cursor: pointer;
-    z-index: 2;
+    z-index: 6;
 }
 #stage-select {
     position: relative;
