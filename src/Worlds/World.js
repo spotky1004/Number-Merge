@@ -62,6 +62,7 @@ export default class World {
             if (this.chapterOrder.length > chapterIdx+2) {
                 this.openStage(this.chapterOrder[chapterIdx+1], 0, saveData);
             } else {
+                MergeField.reloadStage();
                 toggleStageSelect();
             }
         } else {
