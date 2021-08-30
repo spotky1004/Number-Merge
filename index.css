@@ -22,6 +22,47 @@
     --col2: #A8563D; */
 }
 
+@keyframes dropLeft {
+    from {
+        transform: translateX(-100vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes dropTop {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes dropTopAbsolute {
+    from {
+        top: -100vh;
+    }
+    to {
+        top: 0;
+    }
+}
+@keyframes appearOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes appearScale {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -167,6 +208,7 @@ main {
     background-color: var(--col1-1);
 
     z-index: 9999;
+    animation: appearOpacity 0.15s cubic-bezier(0,.2,.07,.91);
 }
 .context-menu > .title {
     padding: 0.2vh 0.9vw;
@@ -203,10 +245,11 @@ main {
     width: 100vw;
     height: 100vh;
 
-    background-color: #222a;
+    background-color: #111c;
 
     cursor: pointer;
     z-index: 6;
+    animation: appearOpacity 0.15s linear;
 }
 #stage-select {
     position: relative;
@@ -228,6 +271,7 @@ main {
     background: linear-gradient(180deg, rgba(68,68,68,1) 0%, rgba(119,119,119,1) 10%, rgba(119,119,119,1) 17%, rgba(68,68,68,1) 100%);
 
     cursor: auto;
+    animation: appearScale 0.15s cubic-bezier(0,.2,.07,.91);
 }
 #stage-select-title {
     flex: 1;
@@ -355,6 +399,7 @@ main {
     pointer-events: none;
 
     z-index: 1;
+    animation: dropTopAbsolute 0.15s cubic-bezier(0,.2,.07,.91);
 }
 #stage-rule-title {
     font-size: 1.3em;
