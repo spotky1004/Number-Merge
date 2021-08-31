@@ -96,6 +96,8 @@ export default class MergeFunction {
 
         // Remove items that used for merge
         removeAll([mainItem, toMerge]);
+        // Emit event
+        MergeField.onMerge();
     }
 }
 
