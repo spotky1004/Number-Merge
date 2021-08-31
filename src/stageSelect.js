@@ -68,6 +68,7 @@ export function displayWorlds() {
 }
 function displayWorld(idx) {
     const World = Worlds[WorldNames[idx]];
+    if (!World.isUnlocked(saveData)) return;
 
     stageSelectStatus.watching = "World";
     stageSelectStatus.data = World;
@@ -83,6 +84,7 @@ function displayWorld(idx) {
 }
 function displayChapter(idx) {
     const Chapter = stageSelectStatus.data.chapters[stageSelectStatus.data.chapterOrder[idx]];
+    if (!Chapter.isUnlocked(saveData)) return;
 
     stageSelectStatus.watching = "Chapter";
     stageSelectStatus.data = Chapter;

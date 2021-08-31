@@ -411,3 +411,37 @@ main {
     display:list-item;
     list-style: circle;
 }
+
+#increment-stage {
+    padding: 2vh 3vw;
+
+    position: absolute;
+    left: 50%;
+    bottom: 6vh;
+    transform: translateX(-50%);
+
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--col2);
+
+    background-color: var(--col1-1);
+    box-shadow:
+        0 0 1vh var(--col1) inset,
+        0 0 0.5vh var(--col2);
+
+    transition:
+        background-color 0.3s ease-out,
+        box-shadow 0.3s ease-out,
+        color 0.3s ease-out;
+    cursor: pointer;
+    z-index: 2;
+}
+#increment-stage:hover {
+    color: var(--col1);
+    text-shadow: 0 0 0.3vh var(--col1);
+
+    background-color: var(--col2);
+    box-shadow:
+        0 0 1vh var(--col2) inset,
+        0 0 0.5vh var(--col2);
+}

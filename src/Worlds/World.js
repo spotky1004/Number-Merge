@@ -48,25 +48,12 @@ export default class World {
     /**
      * @param {saveData} saveData
      */
-    completeStage(saveData) {
+    completeStage() {
         if (typeof MergeField.loadedLevel === "undefined") return;
 
         const StageSymbol = MergeField.loadedLevel.parent.name + "__" + MergeField.loadedLevel.Symbol;
         if (!saveData.Completed[this.name].includes(StageSymbol)) {
             saveData.Completed[this.name].push(StageSymbol);
-        }
-
-        const playingChapter = this.chapters[saveData.Playing.Chapter];
-        if (+saveData.Playing.Stage + 1 >= playingChapter.stages.length) {
-            const chapterIdx = this.chapterOrder.findIndex(e => e === saveData.Playing.Chapter);
-            if (this.chapterOrder.length > chapterIdx+2) {
-                this.openStage(this.chapterOrder[chapterIdx+1], 0, saveData);
-            } else {
-                MergeField.reloadStage();
-                toggleStageSelect();
-            }
-        } else {
-            this.openStage(saveData.Playing.Chapter, +saveData.Playing.Stage + 1, saveData);
         }
     }
 
@@ -80,6 +67,21 @@ export default class World {
         saveData.Playing.Stage = stage;
 
         return Stage;
+    }
+
+    incrementStage() {
+        const playingChapter = this.chapters[saveData.Playing.Chapter];
+        if (+saveData.Playing.Stage + 1 >= playingChapter.stages.length) {
+            const chapterIdx = this.chapterOrder.findIndex(e => e === saveData.Playing.Chapter);
+            if (this.chapterOrder.length > chapterIdx+2) {
+                this.openStage(this.chapterOrder[chapterIdx+1], 0, saveData);
+            } else {
+                MergeField.reloadStage();
+                toggleStageSelect();
+            }
+        } else {
+            this.openStage(saveData.Playing.Chapter, +saveData.Playing.Stage + 1, saveData);
+        }
     }
 
     isCompleted() {

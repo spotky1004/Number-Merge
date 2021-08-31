@@ -32,7 +32,7 @@ try {
 function Tick() {
     // Check The stage is Completed
     if (MergeField.checkCompleted()) {
-        Worlds[saveData.Playing.World].completeStage(saveData);
+        Worlds[saveData.Playing.World].completeStage();
         StageSelect.displayWorlds(); // To reset completed stage highlight
     }
 
