@@ -62,7 +62,7 @@ document.addEventListener("mouseup", (e) => {
     EventCache.target = null;
     EventCache.isMouseDown = false;
 }, false);
-const MainEle = document.getElementsByTagName("main")[0];
+
 document.addEventListener("mousemove", (e) => {
     if (
         EventCache.target !== null &&

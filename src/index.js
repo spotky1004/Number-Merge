@@ -39,6 +39,7 @@ function Tick() {
     } else {
         StageIncrementButton.style.display = "none";
     }
+    MergeField.renderBranch();
     
     // loop
     requestAnimationFrame(Tick);

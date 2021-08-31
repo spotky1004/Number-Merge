@@ -52,14 +52,15 @@ export default class MergeItem {
      * @param { { x: number, y: number } } position
      */
     set position({ x, y }) {
-        const Size = this.size;
+        const MergeFieldEle = MergeField.ele;
+        const SizePx = this.sizePx;
 
-        x = Math.max(0, Math.min(1 - Size.width, x));
-        y = Math.max(0, Math.min(1 - Size.height, y));
+        x = Math.max(0, Math.min(1, x));
+        y = Math.max(0, Math.min(1, y));
 
         this._position = { x, y };
-        this.ele.style.left = x*100 + "%";
-        this.ele.style.top = y*100 + "%";
+        this.ele.style.left = (x - SizePx.width / MergeFieldEle.offsetWidth / 2)*100 + "%";
+        this.ele.style.top = (y - SizePx.height / MergeFieldEle.offsetHeight / 2)*100 + "%";
     }
     get position() {
         return this._position;
@@ -70,13 +71,29 @@ export default class MergeItem {
             y: MergeField.offsetHeight * this._position.y
         }
     }
-    get size() {
+    get centerPositionPx() {
+        const MergeFieldEle = MergeField.ele;
+        const SizePx = this.sizePx;
+
+        return {
+            x: this._position.x * MergeFieldEle.offsetWidth - SizePx.width / MergeFieldEle.offsetWidth / 2,
+            y: this._position.y * MergeFieldEle.offsetHeight - SizePx.height / MergeFieldEle.offsetHeight / 2
+        }
+    }
+    get sizePx() {
         const SymbolLength = this._symbol.length;
+
+        return {
+            width: Math.max(SymbolLength*20, this.ele.offsetWidth),
+            height: Math.max(44, this.ele.offsetHeight)
+        }
+    }
+    get size() {
         const MergeFieldEle = MergeField.ele;
         
         return {
-            width: Math.max(SymbolLength*20, this.ele.offsetWidth) / MergeFieldEle.offsetWidth,
-            height: Math.max(44, this.ele.offsetHeight) / MergeFieldEle.offsetHeight
+            width: this.sizePx.width / MergeFieldEle.offsetWidth,
+            height: this.sizePx.height / MergeFieldEle.offsetHeight
         }
     }
 

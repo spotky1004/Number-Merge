@@ -7,6 +7,7 @@ import { displayWorlds } from "../stageSelect.js";
 
 import Stage from "../Worlds/Stage.js"
 
+const MergeFieldBg = document.getElementById("merge-field-bg");
 const StageRule = document.getElementById("stage-rule-display");
 const StageRuleList = document.getElementById("stage-rule-list");
 
@@ -82,19 +83,40 @@ class MergeField {
                             !["number", "incrementer"].includes(_Item.type) ||
                             Item === _Item
                         ) continue;
-                        console.log(+_Item.symbol);
-                        console.log(+_Item.symbol + +Item.symbol + "");
                         _Item.symbol = +_Item.symbol + +Item.symbol + "";
-                        console.log(_Item.symbol);
                     }
                     break;
             }
         }
-        console.log(this.items);
     }
 
     renderBranch() {
-        
+        MergeFieldBg.innerHTML = "";
+
+        for (const id in this.items) {
+            const Item = this.items[id];
+            const ItemPos = Item.centerPositionPx;
+            switch (Item.type) {
+                case "incrementer":
+                    for (const _id in this.items) {
+                        const _Item = this.items[_id];
+                        const _ItemPos = _Item.centerPositionPx;
+                        if (
+                            !["number", "incrementer"].includes(_Item.type) ||
+                            Item === _Item
+                        ) continue;
+                        const Line = document.createElementNS('http://www.w3.org/2000/svg',"line");
+                        Line.setAttribute("x1", Math.floor(ItemPos.x));
+                        Line.setAttribute("y1", Math.floor(ItemPos.y));
+                        Line.setAttribute("x2", Math.floor(_ItemPos.x));
+                        Line.setAttribute("y2", Math.floor(_ItemPos.y));
+                        Line.style.stroke = "#fff4";
+                        Line.style.strokeWidth = 2;
+                        MergeFieldBg.append(Line);
+                    }
+                    break;
+            }
+        }
     }
 
     /** @param {import("../types/Stage.js").Stage} stage */
