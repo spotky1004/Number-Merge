@@ -171,10 +171,6 @@ main {
 
     width: 80vw;
     height: 95%;
-
-    /* background-color: #8888; */
-    /* box-shadow: 0 0 1.5vh var(--col1-1) inset; */
-    /* border-radius: 1vh; */
 }
 .merge-item {
     display: inline-block;
