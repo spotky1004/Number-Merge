@@ -36,6 +36,15 @@ const ItemTypes = {
             textShadow: "0 0 1vh #ff0"
         }
     };},
+    incrementer() {return {
+        symbol: "1",
+        type: "incrementer",
+        tags: ["incrementer"],
+        MergeFuntion: "incrementer",
+        style: {
+            textShadow: "0 0 1vh #0ff"
+        }
+    }},
     text() {return {
         symbol: "A",
         type: "text",

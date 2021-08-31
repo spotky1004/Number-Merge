@@ -1,5 +1,5 @@
 /**
- * @typedef { "number" | "operator" | "symbol" | "term" | "text" } ItemType
+ * @typedef { "number" | "operator" | "symbol" | "term" | "incrementer" | "text" } ItemType
  */
 
 /** @type {ItemType} */

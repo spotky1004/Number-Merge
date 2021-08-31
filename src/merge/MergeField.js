@@ -64,9 +64,33 @@ class MergeField {
                 collisions.push(Item);
             }
         }
+        if (collisions.length === 0) return;
         collisions.sort((a, b) => Math.sqrt(b.x**2 + b.y**2) - Math.sqrt(a.x**2 + a.y**2));
 
         MergeFunctions[from.MergeFuntion].merge(from, collisions, this.loadedLevel.stageRules);
+        this.onMerge();
+    }
+
+    onMerge() {
+        for (const id in this.items) {
+            const Item = this.items[id];
+            switch (Item.type) {
+                case "incrementer":
+                    for (const _id in this.items) {
+                        const _Item = this.items[_id];
+                        if (
+                            !["number", "incrementer"].includes(_Item.type) ||
+                            Item === _Item
+                        ) continue;
+                        console.log(+_Item.symbol);
+                        console.log(+_Item.symbol + +Item.symbol + "");
+                        _Item.symbol = +_Item.symbol + +Item.symbol + "";
+                        console.log(_Item.symbol);
+                    }
+                    break;
+            }
+        }
+        console.log(this.items);
     }
 
     /** @param {import("../types/Stage.js").Stage} stage */

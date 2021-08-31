@@ -17,7 +17,7 @@ export default class MergeItem {
      * @param {MergeItemConstructor} obj 
      */
     constructor({ symbol, type, id, tags, MergeFuntion, position = {}, style = {} }) {
-        this.symbol = symbol + "";
+        this._symbol = symbol + "";
         this.type = type;
         this.id = id ?? `${this.type}_T${new Date().getTime()}_R${Math.floor(Math.random()*16**6).toString(16)}`;
         this.tags = tags.map((e) => e.toString());
@@ -25,7 +25,7 @@ export default class MergeItem {
 
         const ele = document.createElement("span");
         ele.classList.add("merge-item");
-        ele.innerText = this.symbol;
+        ele.innerText = this._symbol;
         ele.dataset.id = this.id;
         for (const s in style) {
             ele.style[s] = style[s];
@@ -37,9 +37,16 @@ export default class MergeItem {
             y: position.y ?? Math.random()
         };
     }
-    symbol = new String;
-    tags = [new String];
-    _position = {x: 0, y: 0};
+
+    /** @param {string} str */
+    set symbol(str) {
+        this._symbol = str + "";
+        this.ele.innerText = this._symbol;
+        return this._symbol;
+    }
+    get symbol() {
+        return this._symbol;
+    }
 
     /**
      * @param { { x: number, y: number } } position
@@ -64,7 +71,7 @@ export default class MergeItem {
         }
     }
     get size() {
-        const SymbolLength = this.symbol.length;
+        const SymbolLength = this._symbol.length;
         const MergeFieldEle = MergeField.ele;
         
         return {
@@ -86,7 +93,7 @@ export default class MergeItem {
 
     export() {
         return {
-            symbol: this.symbol,
+            symbol: this._symbol,
             id: this.id,
             tags: this.tags,
             position: this.position,

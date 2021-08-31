@@ -4,8 +4,8 @@ import ItemTypes from "./ItemTypes.js";
 
 /**
  * @typedef MergeFunctionConstructor
- * @property {string[]} mergeableTypes
- * @property {string} outputMergeType
+ * @property {import("../types/ItemType.js").ItemType[]} mergeableTypes
+ * @property {import("../types/ItemType.js").ItemType} outputMergeType
  * @property {string} fallbackMergeFunction
  * @property {function(string, string): string} defaultMerge
  * @property {"mainItem" | "mergeItems"} operatorAt
