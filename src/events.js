@@ -75,8 +75,6 @@ document.addEventListener("mousemove", (e) => {
             return;
         }
         const cur = Item.position;
-
-        console.log(MergeField.ele.offsetParent.offsetHeight);
         
         const MergeFieldSize = MergeField.size;
         Item.position = {
