@@ -45,7 +45,10 @@ document.addEventListener("mouseup", (e) => {
             StageSelect.selected(idx);
         }
         if (target.id === "stage-select-back") StageSelect.selected("back");
-        if (target.id === "increment-stage") Worlds[saveData.Playing.World].incrementStage();
+        if (
+            target.id === "increment-stage" &&
+            MergeField.checkCompleted()
+        ) Worlds[saveData.Playing.World].incrementStage();
     }
 
     if (!EventCache.target) {
