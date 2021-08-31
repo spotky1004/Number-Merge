@@ -62,14 +62,8 @@ document.addEventListener("mouseup", (e) => {
     EventCache.target = null;
     EventCache.isMouseDown = false;
 }, false);
+const MainEle = document.getElementsByTagName("main")[0];
 document.addEventListener("mousemove", (e) => {
-    const dL = { x: e.movementX, y: e.movementY };
-    const MergeFieldSize = MergeField.size;
-    const dP = {
-        x: dL.x / MergeFieldSize.width,
-        y: dL.y / MergeFieldSize.height
-    };
-
     if (
         EventCache.target !== null &&
         EventCache.target.classList.contains("merge-item")
@@ -81,10 +75,13 @@ document.addEventListener("mousemove", (e) => {
             return;
         }
         const cur = Item.position;
+
+        console.log(MergeField.ele.offsetParent.offsetHeight);
         
+        const MergeFieldSize = MergeField.size;
         Item.position = {
-            x: cur.x + dP.x,
-            y: cur.y + dP.y
+            x: (e.clientX - MergeField.ele.offsetLeft) / MergeFieldSize.width,
+            y: (e.clientY - MergeField.ele.offsetTop - MergeField.ele.offsetParent.offsetTop) / MergeFieldSize.height
         };
     }
 }, false);

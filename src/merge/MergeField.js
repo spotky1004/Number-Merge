@@ -93,6 +93,10 @@ class MergeField {
         console.log(this.items);
     }
 
+    renderBranch() {
+        
+    }
+
     /** @param {import("../types/Stage.js").Stage} stage */
     openStage(stage) {
         // Remove all MergeItems
