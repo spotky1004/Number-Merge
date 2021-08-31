@@ -62,6 +62,16 @@
         transform: scale(1);
     }
 }
+@keyframes appearBoom {
+    from {
+        opacity: 0;
+        scale: 2;
+    }
+    to {
+        opacity: 1;
+        cale: 1;
+    }
+}
 
 body {
     margin: 0;
@@ -435,6 +445,7 @@ main {
         color 0.3s ease-out;
     cursor: pointer;
     z-index: 2;
+    animation: appearBoom 1s cubic-bezier(0,.2,.07,.91);
 }
 #increment-stage:hover {
     color: var(--col1);

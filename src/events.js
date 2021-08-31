@@ -1,9 +1,11 @@
+import Worlds from "./Worlds/_init.js"
 import MergeField from "./merge/MergeField.js";
 import contextMenu from "./contextmenu/data.js";
 import {
     toggleStageSelect
 } from "./util.js";
 import * as StageSelect from "./stageSelect.js";
+import saveData from "./saveData.js";
 
 /**
  * @typedef {object} EventCache
@@ -43,6 +45,7 @@ document.addEventListener("mouseup", (e) => {
             StageSelect.selected(idx);
         }
         if (target.id === "stage-select-back") StageSelect.selected("back");
+        if (target.id === "increment-stage") Worlds[saveData.Playing.World].incrementStage();
     }
 
     if (!EventCache.target) {
