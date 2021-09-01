@@ -188,10 +188,10 @@ main {
         transform 0.6s cubic-bezier(0,.67,0,.99),
         background-color 0.6s cubic-bezier(0,.67,0,.99);
 }
-.merge-item:hover {
+.merge-item:not(.locked):hover {
     transform: scale(1.4);
 }
-.merge-item:active {
+.merge-item:not(.locked):active {
     color: var(--col1);
 
     transform: scale(1.1);
@@ -200,6 +200,11 @@ main {
     transition: color 3s cubic-bezier(0,.67,0,.99),
         transform 3s cubic-bezier(0,.67,0,.99),
         background-color 3s cubic-bezier(0,.67,0,.99);
+}
+.merge-item.locked {
+    background-color: var(--col1-1);
+
+    cursor: auto;
 }
 #merge-field-bg {
     position: absolute;

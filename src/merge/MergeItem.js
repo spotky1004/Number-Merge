@@ -1,23 +1,22 @@
 import MergeField from "./MergeField.js";
 import MergeItemConstructor from "../types/MergeItemConstructor.js";
 
-const Char = document.createElement("span");
-Char.style.display = "inline-block";
-Char.style.fontSize = "2.6em";
-Char.innerText = "0";
-document.body.appendChild(Char);
-const CharSize = {
-    x: Char.offsetWidth,
-    y: Char.offsetHeight
-};
-Char.remove();
+// const Char = document.createElement("span");
+// Char.style.display = "inline-block";
+// Char.style.fontSize = "2.6em";
+// Char.innerText = "0";
+// document.body.appendChild(Char);
+// const CharSize = {
+//     x: Char.offsetWidth,
+//     y: Char.offsetHeight
+// };
+// Char.remove();
 
 export default class MergeItem {
     /**
-     * @param {MergeItemConstructor} obj 
+     * @param {import("../types/MergeItemConstructor.js").MergeItemConstructor} obj 
      */
-    constructor({ symbol, type, id, tags, MergeFuntion, position = {}, style = {} }) {
-        this._symbol = symbol + "";
+    constructor({ symbol, type, id, tags, MergeFuntion, locked = false, position = {}, style = {} }) {
         this.type = type;
         this.id = id ?? `${this.type}_T${new Date().getTime()}_R${Math.floor(Math.random()*16**6).toString(16)}`;
         this.tags = tags.map((e) => e.toString());
@@ -25,12 +24,14 @@ export default class MergeItem {
 
         const ele = document.createElement("span");
         ele.classList.add("merge-item");
-        ele.innerText = this._symbol;
         ele.dataset.id = this.id;
         for (const s in style) {
             ele.style[s] = style[s];
         }
         this.ele = ele;
+
+        this.symbol = symbol + "";
+        this.locked = locked;
 
         this.position = {
             x: position.x ?? Math.random(),
@@ -40,12 +41,27 @@ export default class MergeItem {
 
     /** @param {string} str */
     set symbol(str) {
-        this._symbol = str + "";
+        const NumberLimit = MergeField.loadedLevel.stageRules.NumberLimit;
+        if (
+            !isNaN(parseInt(str)) &&
+            !isNaN(+str)
+        ) str = Math.max(NumberLimit.min, Math.min(NumberLimit.max, +str));
+        if (!this.locked) this._symbol = str + "";
+        
         this.ele.innerText = this._symbol;
         return this._symbol;
     }
     get symbol() {
         return this._symbol;
+    }
+
+    set locked(bool) {
+        this._locked = bool;
+        this.ele.classList[this._locked ? "add" : "remove"]("locked");
+        return this._locked;
+    }
+    get locked() {
+        return this._locked;
     }
 
     /**
@@ -61,6 +77,7 @@ export default class MergeItem {
         this._position = { x, y };
         this.ele.style.left = (x - SizePx.width / MergeFieldEle.offsetWidth / 2)*100 + "%";
         this.ele.style.top = (y - SizePx.height / MergeFieldEle.offsetHeight / 2)*100 + "%";
+        return this._position;
     }
     get position() {
         return this._position;

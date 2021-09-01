@@ -7,6 +7,7 @@ import MergeItem from "../merge/MergeItem.js";
  * @property {string[]} tags
  * @property { function(MergeItem[]): void } MergeFuntion
  * @property { { x: number, y: number } } position
+ * @property { boolean } locked
  * @property { Object.<string, string> } style
  */
 

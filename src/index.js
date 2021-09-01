@@ -29,15 +29,20 @@ try {
 }
 
 
+let isLevelCompleted = false;
 // Game loop
 function Tick() {
     // Check The stage is Completed
     if (MergeField.checkCompleted()) {
-        Worlds[saveData.Playing.World].completeStage();
-        StageSelect.displayWorlds(); // To reset completed stage highlight
-        StageIncrementButton.style.display = "";
+        if (!isLevelCompleted) {
+            Worlds[saveData.Playing.World].completeStage();
+            StageSelect.displayWorlds(); // To reset completed stage highlight
+            StageIncrementButton.style.display = "";
+        }
+        isLevelCompleted = true;
     } else {
         StageIncrementButton.style.display = "none";
+        isLevelCompleted = false;
     }
     MergeField.renderBranch();
     

@@ -69,12 +69,11 @@ document.addEventListener("mousemove", (e) => {
         EventCache.target.classList.contains("merge-item")
     ) {
         const Item = MergeField.items[EventCache.target.dataset.id];
-        if (!Item) {
+        if (!Item || Item.locked) {
             EventCache.target = null;
             EventCache.isMouseDown = false;
             return;
         }
-        const cur = Item.position;
         
         const MergeFieldSize = MergeField.size;
         Item.position = {

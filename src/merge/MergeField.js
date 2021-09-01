@@ -72,19 +72,18 @@ class MergeField {
     }
 
     onMerge() {
+        const Cache = {
+            incrementCount: Object.entries(this.items)
+                .filter(e => e[1].type === "incrementer")
+                .reduce((a, b) => a + +b[1].symbol, 0)
+        };
         for (const id in this.items) {
             const Item = this.items[id];
-            switch (Item.type) {
-                case "incrementer":
-                    for (const _id in this.items) {
-                        const _Item = this.items[_id];
-                        if (
-                            !["number", "incrementer"].includes(_Item.type) ||
-                            Item === _Item
-                        ) continue;
-                        _Item.symbol = +_Item.symbol + +Item.symbol + "";
-                    }
-                    break;
+            if (["number", "incrementer"].includes(Item.type)) {
+                if (Item.type === "incrementer") {
+                    Item.symbol -= Item.symbol;
+                }
+                Item.symbol = +Item.symbol + Cache.incrementCount;
             }
         }
     }
@@ -102,7 +101,8 @@ class MergeField {
                         const _ItemPos = _Item.centerPositionPx;
                         if (
                             !["number", "incrementer"].includes(_Item.type) ||
-                            Item === _Item
+                            Item === _Item ||
+                            _Item.locked
                         ) continue;
                         const Line = document.createElementNS('http://www.w3.org/2000/svg',"line");
                         Line.setAttribute("x1", Math.floor(ItemPos.x));
@@ -120,6 +120,9 @@ class MergeField {
 
     /** @param {import("../types/Stage.js").Stage} stage */
     openStage(stage) {
+        // Set loadedLevel
+        this.loadedLevel = stage;
+
         // Remove all MergeItems
         for (const id in this.items) {
             this.removeItem(id);
@@ -166,9 +169,6 @@ class MergeField {
         }
         if (toDisplay.length === 0) StageRule.style.display = "none";
         else StageRule.style.display = "";
-
-        // Set loadedLevel
-        this.loadedLevel = stage;
     }
     #layout = {
         ItemGap: 0.1,

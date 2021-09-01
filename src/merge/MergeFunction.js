@@ -59,6 +59,10 @@ export default class MergeFunction {
 
         // Get nearest mergeable
         const toMerge = mergeables.slice(0, 1)[0];
+        if (
+            mainItem.locked ||
+            toMerge.locked
+        ) return;
 
         // Do merge
         const [mainSymbol, toMergeSymbol] = [mainItem.symbol, toMerge.symbol]
@@ -78,15 +82,10 @@ export default class MergeFunction {
             } else if (this.operatorAt === "mergeItems") {
                 [a, b] = [+mainSymbol, +(number ?? toMergeSymbol)];
             }
+            console.log(operator);
             symbol = this.operatorMerge[operator](a, b);
         }
 
-
-        // Apply number limit
-        if (
-            !isNaN(parseInt(symbol)) &&
-            !isNaN(+symbol)
-        ) symbol = Math.max(stageRules.NumberLimit.min, Math.min(stageRules.NumberLimit.max, +symbol));
         // Add result item in the MergeField
         MergeField.addItem({
             ...ItemTypes[this.outputMergeType](),
