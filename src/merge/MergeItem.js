@@ -33,10 +33,13 @@ export default class MergeItem {
         this.symbol = symbol + "";
         this.locked = locked;
 
+        // To read offsetWidth/Height
+        document.body.appendChild(this.ele);
         this.position = {
             x: position.x ?? Math.random(),
             y: position.y ?? Math.random()
         };
+        this.ele.remove();
     }
 
     /** @param {string} str */
@@ -98,11 +101,9 @@ export default class MergeItem {
         }
     }
     get sizePx() {
-        const SymbolLength = this._symbol.length;
-
         return {
-            width: Math.max(SymbolLength*20, this.ele.offsetWidth),
-            height: Math.max(44, this.ele.offsetHeight)
+            width: this.ele.offsetWidth,
+            height: this.ele.offsetHeight
         }
     }
     get size() {
