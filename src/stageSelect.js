@@ -84,7 +84,7 @@ function displayWorld(idx) {
 }
 function displayChapter(idx) {
     const Chapter = stageSelectStatus.data.chapters[stageSelectStatus.data.chapterOrder[idx]];
-    if (!Chapter.isUnlocked(saveData)) return;
+    if (typeof Chapter.isUnlocked !== "undefined" && !Chapter.isUnlocked(saveData)) return;
 
     stageSelectStatus.watching = "Chapter";
     stageSelectStatus.data = Chapter;
