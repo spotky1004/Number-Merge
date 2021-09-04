@@ -314,13 +314,10 @@ main {
     position: absolute;
     right: 1vh;
 
-    display: inline;
+    display: inline-block;
 
     width: 5vh;
     height: 5vh;
-
-    display: flex;
-    justify-content: center;
 
     font-size: 2em;
     
@@ -330,6 +327,15 @@ main {
 
     cursor: pointer;
     transition: color 0.05s linear, background-color 0.05s linear;
+}
+#stage-select-back::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    content: "×";
 }
 #stage-select-back:hover {
     color: #e33424;
