@@ -9,6 +9,7 @@ const SaveData = {
     Completed: {
         Main: [],
         Community: [],
+        Generated: [],
     }
 };
 export default SaveData;
